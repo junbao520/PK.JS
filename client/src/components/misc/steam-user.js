@@ -14,7 +14,8 @@ export default function(props) {
         <span className="avatar avatar-sm rounded-circle">
           <img
             alt="..."
-            src={props.steamUser.avatar}
+            // src={props.steamUser.avatar}
+            src={require("assets/img/brand/mrtx.jpg")}
           />
         </span>
         <Media className="ml-2">

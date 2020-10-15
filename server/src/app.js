@@ -76,7 +76,7 @@ router.post('/user/login',async ctx=>{
     MongoClient.connect(serverConfig.mongoDB, function (err, db) {
       const dbo = db.db("pk-js")
       const collection = dbo.collection("steamusers")
-      collection.findOne({ displayName: postData.displayName,pwd:postData.pwd }, function (err, res) {
+      collection.findOne({ displayName: postData.displayName,pwd:postData.pwd,aduit:1 }, function (err, res) {
         if (err) reject(err);
         else resolve(res)
       });
@@ -123,7 +123,6 @@ router.post('/register', async ctx => {
   postData.avatarFull = postData.avatar;
   postData.avatarMedium = postData.avatar;
   postData.panelAdmin = false;
-
   //先判断下用户名是否存在
   let res = await new Promise(function (resolve, reject) {
     MongoClient.connect(serverConfig.mongoDB, function (err, db) {
