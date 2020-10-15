@@ -32,7 +32,7 @@ class Component extends React.Component{
         <CardHeader>
           <Row className="align-items-center">
             <Col xs="8">
-              <h3 className="mb-0">Admin Logs</h3>
+              <h3 className="mb-0">管理员日志</h3>
             </Col>
             <Col>
               {
@@ -73,16 +73,16 @@ class Component extends React.Component{
         <Table className="align-items-center table-flush" responsive size="sm">
           <thead className="thead-light">
           <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Admin</th>
-            <th scope="col">Log</th>
+            <th scope="col">时间</th>
+            <th scope="col">管理员</th>
+            <th scope="col">操作</th>
           </tr>
           </thead>
           <tbody>
           {
             this.props.adminLogs.map((adminLog, key) => (
               <tr key={key}>
-                <td>{moment.utc(adminLog.date).format('DD/MM/YYYY HH:mm')}</td>
+                <td>{moment.utc(adminLog.date).format('YYYY/MM/DD HH:mm')}</td>
                 <td>
                   <SteamUser steamUser={adminLog.admin} />
                 </td>

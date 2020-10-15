@@ -22,7 +22,7 @@ class Home extends React.Component {
           <Card className="bg-secondary shadow border-0">
             <CardHeader className="bg-transparent pb-5">
               <div className="text-muted text-center mt-2 mb-3">
-                <small>Where to?</small>
+                <small>去哪?</small>
               </div>
               <div className="btn-wrapper text-center">
                 <Button
@@ -31,7 +31,7 @@ class Home extends React.Component {
                   href="/player"
                 >
                   <i className="fas fa-user" />
-                  <span className="btn-inner--text">Player Portal</span>
+                  <span className="btn-inner--text">玩家门户</span>
                 </Button>
                 <Button
                   className="btn-neutral btn-icon"
@@ -39,7 +39,7 @@ class Home extends React.Component {
                   href="/admin"
                 >
                   <i className="fas fa-user-shield" />
-                  <span className="btn-inner--text">Admin Panel</span>
+                  <span className="btn-inner--text">管理员面板</span>
                 </Button>
               </div>
             </CardHeader>

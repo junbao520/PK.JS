@@ -5,14 +5,14 @@ const routes = [
   {
     path: '/',
     exact: true,
-    name: "Home",
+    name: "主页",
     icon: "fas fa-home",
     component: Home
   },
   {
     path: '/login',
     exact: true,
-    name: "Login",
+    name: "登录",
     icon: "fas fa-key",
     component: Login
   }

@@ -90,7 +90,7 @@ class LogSearch extends React.Component {
         <CardHeader>
           <Row className="align-items-center">
             <Col className="col">
-              <h3 className="mb-0">Log Search</h3>
+              <h3 className="mb-0">日志搜索</h3>
             </Col>
             <Col className="col text-right">
               <Button
@@ -98,13 +98,13 @@ class LogSearch extends React.Component {
                 size="sm"
                 onClick={this.copyToClipboard}
               >
-                Copy Search Link to Clipboard
+                将搜索链接复制到剪贴板
               </Button>
             </Col>
           </Row>
         </CardHeader>
         <CardBody>
-          <h6 className="heading-small text-muted mb-4">Date / Time</h6>
+          <h6 className="heading-small text-muted mb-4">日期 / 时间</h6>
           <div className="pl-lg-4">
             <Row>
               <Col md="6">
@@ -135,7 +135,7 @@ class LogSearch extends React.Component {
                     onChange={event => this.setState({ allDay: event.target.checked })}
                   />
                   <label className="custom-control-label" htmlFor="all-day">
-                    All Day
+                    全天
                   </label>
                 </div>
               </Col>
@@ -147,7 +147,7 @@ class LogSearch extends React.Component {
                       <label
                         className="form-control-label"
                       >
-                        Start Time
+                        开始时间
                       </label>
                       <FormGroup>
                         <InputGroup className="input-group-alternative">
@@ -176,7 +176,7 @@ class LogSearch extends React.Component {
                       <label
                         className="form-control-label"
                       >
-                        End Time
+                        结束时间
                       </label>
                       <FormGroup>
                         <InputGroup className="input-group-alternative">
@@ -201,7 +201,7 @@ class LogSearch extends React.Component {
           </div>
           <hr className="my-4" />
           <h6 className="heading-small text-muted mb-4">
-            Search Terms
+            搜索词
           </h6>
           <div className="pl-lg-4">
             <Row>
@@ -211,7 +211,7 @@ class LogSearch extends React.Component {
                     <Input
                       className="form-control-alternative"
                       type="text"
-                      placeholder={`Search Term ${key+1}`}
+                      placeholder={`搜索词 ${key+1}`}
                       value={this.state.searchTerms[key]}
                       onChange={event => {
                         let newSearchTerms = this.state.searchTerms;
@@ -234,7 +234,7 @@ class LogSearch extends React.Component {
                     this.setState({ searchTerms: newSearchTerms });
                   }}
                 >
-                  Less Search Terms
+                  更少的搜索词
                 </Button>
               </Col>
               <Col className="mb-2" sm="auto">
@@ -247,7 +247,7 @@ class LogSearch extends React.Component {
                     this.setState({ searchTerms: newSearchTerms });
                   }}
                 >
-                  More Search Terms
+                  更多的搜索词
                 </Button>
               </Col>
             </Row>
@@ -257,7 +257,7 @@ class LogSearch extends React.Component {
                   color="primary"
                   onClick={this.onSearch}
                 >
-                  Search
+                  搜索
                 </Button>
               </Col>
             </Row>

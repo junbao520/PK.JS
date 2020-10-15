@@ -34,7 +34,7 @@ class AdminPermissionCheckbox extends React.Component{
                 id={this.props.permission+'access'}
               />
               <label className="custom-control-label" htmlFor={this.props.permission+'access'}>
-                Access
+                访问
               </label>
             </div>
           </Col>
@@ -49,7 +49,7 @@ class AdminPermissionCheckbox extends React.Component{
                 id={this.props.permission+'assignaccess'}
               />
               <label className="custom-control-label" htmlFor={this.props.permission+'assignaccess'}>
-                Give Access
+                授予访问权限
               </label>
             </div>
           </Col>

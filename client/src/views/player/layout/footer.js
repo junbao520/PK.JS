@@ -17,14 +17,14 @@ class Footer extends React.Component {
             <Row className="align-items-center justify-content-xl-between">
               <Col xl="6">
                 <div className="copyright text-center text-xl-left text-muted">
-                  © 2019{" "}
+                  © 2020{" "}
                   <a
                     className="font-weight-bold ml-1"
-                    href="https://github.com/OutlawByteStudios"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    MB-Kingdoms Team
+					href="https://qm.qq.com/cgi-bin/qm/qr?k=N_vtpYtJG4x6JFE-QLB8L6JrcONQioAV&jump_from=webapi"
+					target="_blank"
+					rel="noopener noreferrer"
+				  >
+					加入官方QQ群：568769552
                   </a>
                 </div>
               </Col>
@@ -32,22 +32,22 @@ class Footer extends React.Component {
                 <Nav className="nav-footer justify-content-center justify-content-xl-end">
                   <NavItem>
                     <NavLink
-                      href="https://github.com/OutlawByteStudios/Persistent-Kingdoms"
+                      href="https://bbs.mountblade.com.cn/forum-106-1.html"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="fab fa-github"/>{" "}
-                      Persistent Kingdoms GitHub
+                      骑砍中文站永恒讨论板块
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://github.com/OutlawByteStudios/PK.js"
+                      href="https://bbs.mountblade.com.cn/forum-120-1.html"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <i className="fab fa-github"/>{" "}
-                      PK.js GitHub
+                      永恒投诉区
                     </NavLink>
                   </NavItem>
                 </Nav>

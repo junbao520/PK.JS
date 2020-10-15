@@ -63,7 +63,7 @@ class Component extends React.Component{
               color="primary"
               onClick={modal.open}
             >
-              Add Ban
+              封禁
             </Button>
 
             <Modal
@@ -82,7 +82,7 @@ class Component extends React.Component{
                           <label
                             className="form-control-label"
                           >
-                            Public Reason
+                            公开原因
                           </label>
                           <FormGroup>
                             <Input
@@ -93,7 +93,7 @@ class Component extends React.Component{
                               invalid={this.state.publicReason === ''}
                             />
                             <FormFeedback>
-                              A ban reason cannot be blank.
+                              封禁原因不能为空.
                             </FormFeedback>
                           </FormGroup>
                         </Col>
@@ -103,7 +103,7 @@ class Component extends React.Component{
                           <label
                             className="form-control-label"
                           >
-                            Private Reason
+                            私下原因
                           </label>
                           <FormGroup>
                             <Input
@@ -114,7 +114,7 @@ class Component extends React.Component{
                               invalid={this.state.privateReason === ''}
                             />
                             <FormFeedback>
-                              A ban reason cannot be blank.
+                              封禁原因不能为空.
                             </FormFeedback>
                           </FormGroup>
                         </Col>
@@ -124,7 +124,7 @@ class Component extends React.Component{
                           <label
                             className="form-control-label"
                           >
-                            Length (Days)
+                            时长 (天)
                           </label>
                           <Input
                             className="form-control-alternative"
@@ -146,7 +146,7 @@ class Component extends React.Component{
                               id="perm-ban"
                             />
                             <label className="custom-control-label" htmlFor="perm-ban">
-                              Permanent Ban
+                              永久封禁
                             </label>
                           </div>
                         </Col>
@@ -162,7 +162,7 @@ class Component extends React.Component{
                               id="ip-ban"
                             />
                             <label className="custom-control-label" htmlFor="ip-ban">
-                              IP Ban
+                              IP封禁
                             </label>
                           </div>
                         </Col>
@@ -171,7 +171,7 @@ class Component extends React.Component{
                         className={classNames('mt-2', { disabled: !this.isValid()})}
                         color="primary"
                       >
-                        Add Ban
+                        封禁
                       </Button>
                     </Form>
                   </CardBody>

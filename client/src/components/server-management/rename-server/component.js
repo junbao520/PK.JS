@@ -54,7 +54,7 @@ class Component extends React.Component{
               color="warning"
               onClick={modal.open}
             >
-              Rename Server
+              重命名服务器
             </Button>
 
             <Modal
@@ -73,7 +73,7 @@ class Component extends React.Component{
                           <label
                             className="form-control-label"
                           >
-                            Server Name
+                            服务器名
                           </label>
                           <FormGroup>
                             <Input
@@ -84,7 +84,7 @@ class Component extends React.Component{
                               invalid={!validatorServerName(this.state.name)}
                             />
                             <FormFeedback>
-                              A server name cannot be blank and must only contain the characters A-Z, a-z, 0-9 or _
+                              服务器名称不能为空，只能包含字符 A-Z, a-z, 0-9 或 _
                             </FormFeedback>
                           </FormGroup>
                         </Col>
@@ -93,7 +93,7 @@ class Component extends React.Component{
                         className={classNames('mt-2', { disabled: !this.isValid()})}
                         color="primary"
                       >
-                        Rename Server
+                        重命名服务器
                       </Button>
                     </Form>
                   </CardBody>

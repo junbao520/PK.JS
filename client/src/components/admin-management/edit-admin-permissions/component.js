@@ -123,7 +123,7 @@ class Component extends React.Component{
                 size="sm"
                 onClick={this.clearPermissions}
               >
-                Remove all Permissions
+                移除所有权限
               </Button>
               <SaveChange
                 serverID={this.props.serverID}
@@ -134,7 +134,7 @@ class Component extends React.Component{
           </Row>
         </CardHeader>
         <CardBody>
-          <h6 className="heading-small text-muted mb-4">Presets</h6>
+          <h6 className="heading-small text-muted mb-4">预设</h6>
           <div className="pl-lg-4">
             <Row>
               <Col>
@@ -144,7 +144,7 @@ class Component extends React.Component{
                   onChange={event => this.applyPreset(event.target.value)}
                   disabled={selectedAdmin.admin.steamID === currentAdmin.admin.steamID}
                 >
-                  <option value={null}>Select a preset to apply...</option>
+                  <option value={null}>选择一个预设以应用</option>
                   {
                     Object.keys(permissionPresets).map((preset, key) => (
                       <option
@@ -158,7 +158,7 @@ class Component extends React.Component{
             </Row>
           </div>
           <hr className="my-4" />
-          <h6 className="heading-small text-muted mb-4">Panel Permissions</h6>
+          <h6 className="heading-small text-muted mb-4">面板权限</h6>
           <div className="pl-lg-4">
             <Row>
               {
@@ -176,7 +176,7 @@ class Component extends React.Component{
             </Row>
           </div>
           <hr className="my-4" />
-          <h6 className="heading-small text-muted mb-4">In-Game Permissions</h6>
+          <h6 className="heading-small text-muted mb-4">游戏内权限</h6>
           <div className="pl-lg-4">
             <Row>
               <Col md="6" lg="6" xl="4">
@@ -184,7 +184,7 @@ class Component extends React.Component{
                   <label
                     className="form-control-label"
                   >
-                    Player
+                    角色
                   </label>
                   <PlayerSelector
                     serverID={this.props.serverID}

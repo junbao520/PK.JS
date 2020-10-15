@@ -10,11 +10,11 @@ export default function() {
   return (
     <Card>
       <CardHeader>
-        <h3 className="mb-0">Richest Players</h3>
+        <h3 className="mb-0">财富排行榜</h3>
       </CardHeader>
       <CardBody>
         <div className="text-center mt-2 mb-3">
-          Loading...
+          加载中...
         </div>
         <div className="btn-wrapper text-center">
           <i className="fas fa-circle-notch fa-spin fa-4x" />

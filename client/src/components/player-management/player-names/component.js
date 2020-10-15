@@ -24,7 +24,7 @@ class Component extends React.Component {
         <CardHeader className="bg-white border-0">
           <Row className="align-items-center">
             <Col xs="8">
-              <h3 className="mb-0">Player Names</h3>
+              <h3 className="mb-0">角色名</h3>
             </Col>
           </Row>
         </CardHeader>
@@ -56,7 +56,7 @@ class Component extends React.Component {
                     >
                       <div className="modal-header">
                         <h6 className="modal-title">
-                          Player Name Info
+                          角色名信息
                         </h6>
                         <button
                           aria-label="Close"
@@ -72,7 +72,7 @@ class Component extends React.Component {
                         <div className="py-3 text-center">
                           <i className="fas fa-info-circle fa-4x" />
                           <h4 className="heading mt-4">{name.name}</h4>
-                          <p><strong>Last Seen:</strong> {moment.utc(name.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+                          <p><strong>上次在线:</strong> {moment.utc(name.lastSeen).format('YYYY/MM/DD HH:mm')}</p>
                         </div>
                       </ModalBody>
                       <ModalFooter>
@@ -88,7 +88,7 @@ class Component extends React.Component {
                           data-dismiss="modal"
                           onClick={modal.close}
                         >
-                          Close
+                          关闭
                         </Button>
                       </ModalFooter>
                     </Modal>

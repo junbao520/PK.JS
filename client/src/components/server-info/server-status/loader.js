@@ -15,10 +15,10 @@ export default function() {
         <Row>
           <Col>
             <CardTitle className="text-uppercase text-muted mb-0">
-              Unknown Server
+              未知的服务器
             </CardTitle>
             <span className="h2 font-weight-bold mb-0">
-              Loading...
+              加载中...
             </span>
           </Col>
           <Col className="col-auto">

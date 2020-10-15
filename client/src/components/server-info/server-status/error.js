@@ -15,10 +15,10 @@ export default function() {
         <Row>
           <Col>
             <CardTitle className="text-uppercase text-muted mb-0">
-              Unknown Server
+              未知的服务器
             </CardTitle>
             <span className="h2 font-weight-bold mb-0">
-              Error Fetching Status
+              错误提取状态
             </span>
           </Col>
           <Col className="col-auto">

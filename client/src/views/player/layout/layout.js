@@ -32,7 +32,7 @@ class Layout extends React.Component {
               <div className="header-body text-center mb-7">
                 <Row className="justify-content-center">
                   <Col lg="6" md="6">
-                    <h1 className="text-white">Welcome {Auth.claim.displayName} to the Player Portal!</h1>
+                    <h1 className="text-white">欢迎 {Auth.claim.displayName} 来到玩家门户！</h1>
                   </Col>
                 </Row>
               </div>

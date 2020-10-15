@@ -21,14 +21,14 @@ const generalRoutes = [
   {
     path: pathPrefix + '/',
     exact: true,
-    name: "Home",
+    name: "主页",
     icon: "fas fa-home",
     component: Home
   },
   {
     path: pathPrefix + '/create-server',
     exact: true,
-    name: "Create Server",
+    name: "创建服务器",
     icon: "fas fa-plus-square",
     component: CreateServer,
     requiredPermission: 'panelAdmin'
@@ -36,7 +36,7 @@ const generalRoutes = [
   {
     path: pathPrefix + '/item-ids',
     exact: true,
-    name: "Item IDs",
+    name: "物品ID",
     icon: "fas fa-list-ol",
     component: ItemIDs
   }
@@ -46,7 +46,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID',
     exact: true,
-    name: "Dashboard",
+    name: "仪表板",
     icon: "fas fa-desktop",
     component: Dashboard
   },
@@ -54,7 +54,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/server-management',
     exact: true,
-    name: "Server Management",
+    name: "服务器管理",
     icon: "fas fa-server",
     component: ServerManagement,
     requiresPermission: [
@@ -69,7 +69,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/stats',
     exact: true,
-    name: "Server Stats",
+    name: "服务器统计",
     icon: "fas fa-chart-line",
     component: ServerStats,
     requiresPermission: [
@@ -80,7 +80,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/admins/:steamID',
     exact: true,
-    name: "Admins",
+    name: "管理员",
     icon: "fas fa-user-shield",
     component: Admins,
     displayInSidebar: false
@@ -88,7 +88,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/admins',
     exact: false,
-    name: "Admins",
+    name: "管理员",
     icon: "fas fa-user-shield",
     component: Admins
   },
@@ -96,7 +96,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/admin-logs',
     exact: false,
-    name: "Admin Logs",
+    name: "管理员日志",
     icon: "fas fa-clipboard-list",
     component: AdminLogs,
     requiresPermission: [
@@ -107,7 +107,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/players/:guid',
     exact: true,
-    name: "Players",
+    name: "玩家",
     icon: "fas fa-users",
     component: Players,
     displayInSidebar: false
@@ -115,7 +115,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/players',
     exact: false,
-    name: "Players",
+    name: "玩家",
     icon: "fas fa-users",
     component: Players,
     requiresPermission: [
@@ -140,7 +140,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/playersbyip/:ipMask',
     exact: true,
-    name: "Players by IP",
+    name: "玩家IP",
     icon: "fas fa-users",
     component: PlayersByIP,
     displayInSidebar: false
@@ -148,7 +148,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/playersbyip',
     exact: false,
-    name: "Players by IP",
+    name: "玩家IP",
     icon: "fas fa-users",
     component: PlayersByIP,
     requiresPermission: [
@@ -159,7 +159,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/logs/:searchString',
     exact: false,
-    name: "Logs",
+    name: "日志",
     icon: "fas fa-clipboard-list",
     component: LogSearch,
     displayInSidebar: false
@@ -167,7 +167,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/logs',
     exact: false,
-    name: "Logs",
+    name: "日志",
     icon: "fas fa-clipboard-list",
     component: LogSearch,
     requiresPermission: [
@@ -177,7 +177,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/ban-list',
     exact: false,
-    name: "Ban List",
+    name: "封禁列表",
     icon: "fas fa-clipboard-list",
     component: BanList,
     requiresPermission: [
@@ -187,7 +187,7 @@ const serverRoutes = [
   {
     path: pathPrefix + '/:serverID/richest-players',
     exact: false,
-    name: "Richest Players",
+    name: "财富排行榜",
     icon: "fas fa-university",
     component: RichestPlayers
   }

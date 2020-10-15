@@ -48,7 +48,7 @@ class ServerSelectorSelect extends React.Component{
                       id="use-custom-ban-list"
                     />
                     <label className="custom-control-label" htmlFor="use-custom-ban-list">
-                      Use Custom Ban List
+                      使用自定义封禁名单
                     </label>
                   </div>
                 )

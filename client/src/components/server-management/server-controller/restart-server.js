@@ -59,12 +59,12 @@ class RestartServer extends React.Component{
                   (
                     <>
                       <i className="fas fa-circle-notch fa-spin" />{" "}
-                      Loading...
+                      加载中...
                     </>
                   ) : (
                     <>
                       <i className="fas fa-redo-alt" />{" "}
-                      Restart Server
+                      重启服务器
                     </>
                   )
               }

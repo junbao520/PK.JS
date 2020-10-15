@@ -26,7 +26,7 @@ class PlayerSelector extends React.Component {
     for(let playerName of data.server.playerNames){
       options.push({
         value: playerName.player.guid,
-        label: 'Name: ' + playerName.name
+        label: '名字: ' + playerName.name
       });
     }
 
@@ -40,7 +40,7 @@ class PlayerSelector extends React.Component {
     if(this.props.allowNone){
       options.push({
         value: '',
-        label: 'None'
+        label: '无'
       });
     }
 
@@ -53,7 +53,7 @@ class PlayerSelector extends React.Component {
     if(this.props.allowNone){
       defaultOptions.push({
         value: '',
-        label: 'None'
+        label: '无'
       });
     }
 
@@ -64,7 +64,7 @@ class PlayerSelector extends React.Component {
         loadOptions={this.searchUpdate}
         defaultOptions={defaultOptions}
         value={(this.props.player) ? { value: this.props.player, label: 'GUID: ' + this.props.player } : null}
-        placeholder="Select a player..."
+        placeholder="选择一个玩家..."
         onChange={option => this.props.onChange(option.value)}
         isDisabled={this.props.isDisabled}
       />

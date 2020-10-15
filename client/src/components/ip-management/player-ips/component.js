@@ -20,10 +20,10 @@ class Component extends React.Component {
     return (
       <Card className="bg-secondary shadow">
         <CardHeader className="bg-white border-0">
-          <h3 className="mb-0">Player IPs</h3>
+          <h3 className="mb-0">玩家IP</h3>
         </CardHeader>
         <CardBody>
-          <h6 className="heading-small text-muted mb-4">IP Masks</h6>
+          <h6 className="heading-small text-muted mb-4">IP掩码</h6>
           <div className="pl-lg-4">
             {
               this.props.ipRecords.map((record, key) => {
@@ -58,7 +58,7 @@ class Component extends React.Component {
                         >
                           <div className="modal-header">
                             <h6 className="modal-title">
-                              Player IP Info
+                              玩家IP信息
                             </h6>
                             <button
                               aria-label="Close"
@@ -76,8 +76,8 @@ class Component extends React.Component {
                               <h4 className="heading mt-4">
                                 #{record.ipMask.toString().padStart(6, '0')}
                               </h4>
-                              <p><strong>IP Address:</strong> {(record.ip) ? record.ip : '***.***.***.***'}</p>
-                              <p><strong>Last Seen:</strong> {moment.utc(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+                              <p><strong>IP地址:</strong> {(record.ip) ? record.ip : '***.***.***.***'}</p>
+                              <p><strong>上次出现:</strong> {moment.utc(record.lastSeen).format('YYYY/MM/DD HH:mm')}</p>
                             </div>
                           </ModalBody>
                           <ModalFooter>
@@ -87,7 +87,7 @@ class Component extends React.Component {
                               tag={Link}
                               to={`/admin/${this.props.serverID}/playersbyip/${record.ipMask}/`}
                             >
-                              View IP Page
+                              查看IP页面
                             </Button>
                             <Button
                               className="text-white ml-auto"
@@ -95,7 +95,7 @@ class Component extends React.Component {
                               data-dismiss="modal"
                               onClick={modal.close}
                             >
-                              Close
+                              关闭
                             </Button>
                           </ModalFooter>
                         </Modal>
@@ -107,7 +107,7 @@ class Component extends React.Component {
             }
           </div>
           <hr className="my-4" />
-          <h6 className="heading-small text-muted mb-4">GUIDs linked by IP</h6>
+          <h6 className="heading-small text-muted mb-4">通过IP绑定的GUID</h6>
           <div className="pl-lg-4">
             {
               this.props.ipLinkedRecords.map((record, key) => {
@@ -142,7 +142,7 @@ class Component extends React.Component {
                         >
                           <div className="modal-header">
                             <h6 className="modal-title">
-                              Player IP Info
+                              玩家IP信息
                             </h6>
                             <button
                               aria-label="Close"
@@ -160,7 +160,7 @@ class Component extends React.Component {
                               <h4 className="heading mt-4">
                                 {record.player.guid} (#{record.ipMask})
                               </h4>
-                              <p><strong>Last Seen on IP:</strong> {moment.utc(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+                              <p><strong>IP上次出现:</strong> {moment.utc(record.lastSeen).format('YYYY/MM/DD HH:mm')}</p>
                             </div>
                           </ModalBody>
                           <ModalFooter>
@@ -171,7 +171,7 @@ class Component extends React.Component {
                               tag={Link}
                               to={`/admin/${this.props.serverID}/players/${record.player.guid}/`}
                             >
-                              View Player Page
+                              查看玩家页面
                             </Button>
                             <Button
                               className="text-white ml-auto"
@@ -179,7 +179,7 @@ class Component extends React.Component {
                               data-dismiss="modal"
                               onClick={modal.close}
                             >
-                              Close
+                              关闭
                             </Button>
                           </ModalFooter>
                         </Modal>

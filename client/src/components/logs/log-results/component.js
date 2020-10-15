@@ -10,7 +10,7 @@ export default (props) => {
   return (
     <Card className="bg-secondary shadow">
       <CardHeader className="bg-white border-0">
-        <h3 className="mb-0">Search Results</h3>
+        <h3 className="mb-0">搜索结果</h3>
       </CardHeader>
       <CardBody>
         <pre>

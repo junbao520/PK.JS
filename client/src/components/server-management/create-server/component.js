@@ -52,7 +52,7 @@ class Component extends React.Component{
         <CardHeader className="bg-white border-0">
           <Row className="align-items-center">
             <Col xs="8">
-              <h3 className="mb-0">Create Server</h3>
+              <h3 className="mb-0">创建服务器</h3>
             </Col>
           </Row>
         </CardHeader>
@@ -78,7 +78,7 @@ class Component extends React.Component{
                     invalid={!validatorServerName(this.state.name)}
                   />
                   <FormFeedback>
-                    A server name cannot be blank and must only contain the characters A-Z, a-z, 0-9 or _
+                    服务器名称不能位空，只能包含字符 A-Z, a-z, 0-9 或 _
                   </FormFeedback>
                 </FormGroup>
               </Col>
@@ -90,7 +90,7 @@ class Component extends React.Component{
                     className="form-control-label"
                     htmlFor="input-first-name"
                   >
-                    Welcome Message
+                    欢迎信息
                   </label>
                   <Input
                     className="form-control-alternative"
@@ -108,7 +108,7 @@ class Component extends React.Component{
                     className="form-control-label"
                     htmlFor="input-first-name"
                   >
-                    Default Gold in Bank
+                    初始银行存款
                   </label>
                   <Input
                     className="form-control-alternative"
@@ -124,7 +124,7 @@ class Component extends React.Component{
                     className="form-control-label"
                     htmlFor="input-first-name"
                   >
-                    Default Gold in Pouch
+                    初始携带现金
                   </label>
                   <Input
                     className="form-control-alternative"
@@ -140,7 +140,7 @@ class Component extends React.Component{
                     className="form-control-label"
                     htmlFor="input-first-name"
                   >
-                    Default Bank Limit
+                    初始银行存款上限
                   </label>
                   <Input
                     className="form-control-alternative"
@@ -162,7 +162,7 @@ class Component extends React.Component{
                     id="record-stats"
                   />
                   <label className="custom-control-label" htmlFor="record-stats">
-                    Record Stats
+                    记录统计
                   </label>
                 </div>
               </Col>
@@ -174,7 +174,7 @@ class Component extends React.Component{
                     className="form-control-label"
                     htmlFor="input-first-name"
                   >
-                    Restart Cron
+                    重启时间
                   </label>
                   <Input
                     className="form-control-alternative"
@@ -191,7 +191,7 @@ class Component extends React.Component{
                   color="primary"
                   disabled={!this.isValid()}
                 >
-                  Create
+                  创建
                 </Button>
               </Col>
             </Row>

@@ -63,7 +63,7 @@ class ServerManagement extends React.Component {
                     <Col xs="8">
                       <h3 className="mb-0">
                         <i className="fas fa-exclamation-triangle mr-2"/>
-                        Danger Zone
+                        危险区域
                       </h3>
                     </Col>
                   </Row>

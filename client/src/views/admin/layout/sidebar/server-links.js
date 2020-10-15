@@ -78,7 +78,7 @@ class ServerLinks extends React.Component {
               {/* Divider */}
               <hr className="my-3" />
               {/* Heading */}
-              <h6 className="navbar-heading text-muted">Server</h6>
+              <h6 className="navbar-heading text-muted">服务器</h6>
             </>
           );
           if (error) return (
@@ -86,7 +86,7 @@ class ServerLinks extends React.Component {
               {/* Divider */}
               <hr className="my-3" />
               {/* Heading */}
-              <h6 className="navbar-heading text-muted">Error :(</h6>
+              <h6 className="navbar-heading text-muted">错误 :(</h6>
             </>
           );
 

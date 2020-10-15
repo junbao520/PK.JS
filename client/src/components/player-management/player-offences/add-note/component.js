@@ -45,7 +45,7 @@ class Component extends React.Component{
               color="primary"
               onClick={modal.open}
             >
-              Add Note
+              添加备注
             </Button>
 
             <Modal
@@ -62,7 +62,7 @@ class Component extends React.Component{
                       <label
                         className="form-control-label"
                       >
-                        Note
+                        备注
                       </label>
                       <FormGroup>
                         <Input
@@ -73,14 +73,14 @@ class Component extends React.Component{
                           invalid={this.state.note === ''}
                         />
                         <FormFeedback>
-                          A note cannot be blank.
+                          备注不能为空.
                         </FormFeedback>
                       </FormGroup>
                       <Button
                         className={classNames('mt-2', { disabled: this.state.note === ''})}
                         color="primary"
                       >
-                        Add Note
+                        添加备注
                       </Button>
                     </Form>
                   </CardBody>

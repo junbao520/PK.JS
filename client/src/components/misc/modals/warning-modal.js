@@ -37,7 +37,7 @@ export default function(props) {
           <ModalBody>
             <div className="py-3 text-center">
               <i className="fas fa-exclamation-triangle fa-4x" />
-              <h4 className="heading mt-4">Are you sure about that?</h4>
+              <h4 className="heading mt-4">你确定吗?</h4>
               <p>{props.subText}</p>
             </div>
           </ModalBody>
@@ -51,7 +51,7 @@ export default function(props) {
                 if(props.action) props.action();
               }}
             >
-              I'm sure!
+              我很确定!
             </Button>
             <Button
               className="text-white ml-auto"
@@ -60,7 +60,7 @@ export default function(props) {
               type="button"
               onClick={modal.close}
             >
-              Close
+              关闭
             </Button>
           </ModalFooter>
         </Modal>

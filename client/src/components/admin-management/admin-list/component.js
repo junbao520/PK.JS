@@ -21,14 +21,14 @@ class Component extends React.Component{
     return (
       <Card>
         <CardHeader className="border-0">
-          <h3 className="mb-0">Admins</h3>
+          <h3 className="mb-0">管理员</h3>
         </CardHeader>
         <Table className="align-items-center table-flush" responsive>
           <thead className="thead-light">
           <tr>
-            <th>Admin</th>
+            <th>管理员</th>
             <th>GUID</th>
-            <th>Actions</th>
+            <th>操作</th>
           </tr>
           </thead>
           <tbody>
@@ -38,7 +38,7 @@ class Component extends React.Component{
                 <td>
                   <SteamUser steamUser={adminPermission.admin} />
                 </td>
-                <td>{(adminPermission.player) ? adminPermission.player.guid : 'GUID not set.'}</td>
+                <td>{(adminPermission.player) ? adminPermission.player.guid : 'GUID 没有设置'}</td>
                 <td>
                   <Button
                     color="primary"
@@ -47,7 +47,7 @@ class Component extends React.Component{
                     tag={Link}
                     to={`/admin/${this.props.serverID}/admins/${adminPermission.admin.steamID}/`}
                   >
-                    Edit Permission
+                    编辑权限
                   </Button>
                   <RemoveAdmin serverID={this.props.serverID} steamID={adminPermission.admin.steamID} />
                 </td>

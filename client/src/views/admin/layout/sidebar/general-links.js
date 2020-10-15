@@ -53,10 +53,10 @@ class GeneralLinks extends React.Component {
       >
         {({ loading, error, data }) => {
           if (loading) return (
-            <h6 className="navbar-heading text-muted"><i className="fas fa-circle-notch fa-spin" /> Loading</h6>
+            <h6 className="navbar-heading text-muted"><i className="fas fa-circle-notch fa-spin" /> 加载中</h6>
           );
           if (error) return (
-            <h6 className="navbar-heading text-muted"><i className="fas fa-exclamation-triangle" /> Error :(</h6>
+            <h6 className="navbar-heading text-muted"><i className="fas fa-exclamation-triangle" /> 错误 :(</h6>
           );
 
           return (

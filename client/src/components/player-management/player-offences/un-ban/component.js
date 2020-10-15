@@ -48,7 +48,7 @@ class Component extends React.Component{
               size="sm"
               onClick={modal.open}
             >
-              Unban
+              解封
             </Button>
 
             <Modal
@@ -67,7 +67,7 @@ class Component extends React.Component{
                           <label
                             className="form-control-label"
                           >
-                            Reason
+                            原因
                           </label>
                           <FormGroup>
                             <Input
@@ -78,7 +78,7 @@ class Component extends React.Component{
                               invalid={this.state.reason === ''}
                             />
                             <FormFeedback>
-                              A reason cannot be blank.
+                              解封原因不能为空.
                             </FormFeedback>
                           </FormGroup>
                         </Col>
@@ -87,7 +87,7 @@ class Component extends React.Component{
                         className={classNames('mt-2', { disabled: this.state.reason === ''})}
                         color="primary"
                       >
-                        Unban
+                        解封
                       </Button>
                     </Form>
                   </CardBody>

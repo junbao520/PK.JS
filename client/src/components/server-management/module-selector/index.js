@@ -23,7 +23,7 @@ class ModuleSelector extends React.Component{
       >
         {({ loading, error, data }) => {
           if(loading) return <Loader />;
-          if(error) return <p>Error</p>;
+          if(error) return <p>错误</p>;
 
           if(data.adminPermission.viewServerFiles === 0) return <NoPermission/>;
 

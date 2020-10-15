@@ -4,7 +4,7 @@ export default function() {
   return (
     <div className="text-center">
       <i className="fas fa-circle-notch fa-spin" />{" "}
-      Loading...
+      加载中...
     </div>
   );
 }

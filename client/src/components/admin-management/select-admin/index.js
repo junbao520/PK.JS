@@ -16,8 +16,8 @@ class SelectAdmin extends React.Component{
         onError={() => {}}
       >
         {({ loading, error, data }) => {
-          if(loading) return 'Loading...';
-          if(error) return 'Error...';
+          if(loading) return '加载中...';
+          if(error) return '错误...';
 
           return (
             <Component

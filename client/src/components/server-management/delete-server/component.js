@@ -15,7 +15,7 @@ class DeleteServer extends React.Component{
           this.state.confirmation &&
           (
             <DangerModal
-              subText="Deleting a server will delete all players info and server files. It cannot be undone!"
+              subText="删除服务器将删除所有玩家信息和服务器文件，不可撤销！"
               action={this.props.action}
               onClose={() => {this.setState({ confirmation: false})}}
             />
@@ -26,7 +26,7 @@ class DeleteServer extends React.Component{
           color="danger"
           onClick={() => {this.setState({ confirmation: true })}}
         >
-          Delete Server
+          删除服务器
         </Button>
       </>
     );

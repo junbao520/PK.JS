@@ -29,7 +29,7 @@ class Component extends React.Component{
     return (
       <Card>
         <CardHeader>
-          <h3 className="mb-0">Server Controller</h3>
+          <h3 className="mb-0">服务器控制</h3>
         </CardHeader>
         <CardBody>
           <Row>

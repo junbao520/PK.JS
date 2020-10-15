@@ -35,7 +35,7 @@ class Component extends React.Component{
           <Row className="align-items-center">
             <div className="col">
               <h6 className="text-uppercase text-light ls-1 mb-1">
-                Player Stats
+                玩家统计
               </h6>
               <h2 className="text-white mb-0">{this.props.statName}</h2>
             </div>
@@ -48,7 +48,7 @@ class Component extends React.Component{
                     className="py-2 px-3"
                     onClick={() => this.props.onModeChange('year')}
                   >
-                    <span className="d-none d-md-block">Year</span>
+                    <span className="d-none d-md-block">年</span>
                     <span className="d-md-none">Y</span>
                   </Button>
                 </NavItem>
@@ -59,7 +59,7 @@ class Component extends React.Component{
                     className="py-2 px-3"
                     onClick={() => this.props.onModeChange('month')}
                   >
-                    <span className="d-none d-md-block">Month</span>
+                    <span className="d-none d-md-block">月</span>
                     <span className="d-md-none">M</span>
                   </Button>
                 </NavItem>
@@ -70,7 +70,7 @@ class Component extends React.Component{
                     className="py-2 px-3"
                     onClick={() => this.props.onModeChange('week')}
                   >
-                    <span className="d-none d-md-block">Week</span>
+                    <span className="d-none d-md-block">周</span>
                     <span className="d-md-none">W</span>
                   </Button>
                 </NavItem>
@@ -81,7 +81,7 @@ class Component extends React.Component{
                     className="py-2 px-3"
                     onClick={() => this.props.onModeChange('day')}
                   >
-                    <span className="d-none d-md-block">Day</span>
+                    <span className="d-none d-md-block">日</span>
                     <span className="d-md-none">D</span>
                   </Button>
                 </NavItem>

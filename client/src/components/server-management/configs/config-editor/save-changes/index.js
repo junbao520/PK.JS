@@ -63,10 +63,10 @@ class SaveServerConfig extends React.Component{
                   (
                     <>
                       <i className="fas fa-circle-notch fa-spin" />{" "}
-                      Loading...
+                      加载中...
                     </>
                   ) : (
-                    <>Save Changes</>
+                    <>保存修改</>
                   )
               }
             </Button>

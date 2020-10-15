@@ -15,7 +15,7 @@ class Component extends React.Component{
           this.state.confirmation &&
           (
             <DangerModal
-              subText="Reinstalling a server will delete server files and copy files back from the default server directory. It cannot be undone!"
+              subText="重新安装服务器将删除服务器文件，并将文件从默认服务器目录复制回去，不可撤销！"
               action={this.props.action}
               onClose={() => {this.setState({ confirmation: false})}}
             />
@@ -26,7 +26,7 @@ class Component extends React.Component{
           color="danger"
           onClick={() => {this.setState({ confirmation: true })}}
         >
-          Reinstall Server
+          重新安装服务器
         </Button>
       </>
     );

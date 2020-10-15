@@ -55,7 +55,7 @@ class Component extends React.Component{
               color="primary"
               onClick={modal.open}
             >
-              Add Warning
+              警告
             </Button>
 
             <Modal
@@ -74,7 +74,7 @@ class Component extends React.Component{
                           <label
                             className="form-control-label"
                           >
-                            Public Reason
+                            公开原因
                           </label>
                           <FormGroup>
                             <Input
@@ -85,7 +85,7 @@ class Component extends React.Component{
                               invalid={this.state.publicReason === ''}
                             />
                             <FormFeedback>
-                              A warning reason cannot be blank.
+                              警告原因不能为空.
                             </FormFeedback>
                           </FormGroup>
                         </Col>
@@ -95,7 +95,7 @@ class Component extends React.Component{
                           <label
                             className="form-control-label"
                           >
-                            Private Reason
+                            私下原因
                           </label>
                           <FormGroup>
                             <Input
@@ -106,7 +106,7 @@ class Component extends React.Component{
                               invalid={this.state.privateReason === ''}
                             />
                             <FormFeedback>
-                              A warning reason cannot be blank.
+                              警告原因不能为空.
                             </FormFeedback>
                           </FormGroup>
                         </Col>
@@ -115,7 +115,7 @@ class Component extends React.Component{
                         className={classNames('mt-2', { disabled: !this.isValid()})}
                         color="primary"
                       >
-                        Add Warning
+                        警告
                       </Button>
                     </Form>
                   </CardBody>

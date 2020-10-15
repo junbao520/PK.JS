@@ -56,7 +56,7 @@ class PlayersByIP extends React.Component {
                 <CardHeader className="bg-white border-0">
                   <Row className="align-items-center">
                     <Col xs="8">
-                      <h3 className="mb-0">IP Search</h3>
+                      <h3 className="mb-0">搜索IP</h3>
                     </Col>
                   </Row>
                 </CardHeader>
@@ -69,7 +69,7 @@ class PlayersByIP extends React.Component {
                             className="form-control-label"
                             htmlFor="input-username"
                           >
-                            Search
+                            搜索
                           </label>
                           <IPSelector serverID={serverID} ipMask={ipMask} onChange={this.onIPMaskIDChange} />
                         </FormGroup>

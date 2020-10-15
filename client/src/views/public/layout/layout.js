@@ -27,10 +27,9 @@ class Layout extends React.Component {
               <div className="header-body text-center mb-7">
                 <Row className="justify-content-center">
                   <Col lg="5" md="6">
-                    <h1 className="text-white">Welcome to PK.js!</h1>
+                    <h1 className="text-white">Welcome to X!</h1>
                     <p className="text-lead text-light">
-                      The world's most powerful Persistent Kingdoms script set.
-                      Free & Open Source for your convenience.
+                      永恒王国MOD是永恒世界的强化版，有着更丰富的动作、装备与实时昼夜循环系统，画质提高优化更好.
                     </p>
                   </Col>
                 </Row>

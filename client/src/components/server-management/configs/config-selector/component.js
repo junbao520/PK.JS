@@ -21,7 +21,7 @@ class Component extends React.Component{
         onChange={this.onChange}
         disabled={this.props.disabled}
       >
-        <option className="text-default" value={null}>Select a Config...</option>
+        <option className="text-default" value={null}>选择一个配置...</option>
         {
           this.props.configs.map((config, key) => (
             <option
@@ -35,7 +35,7 @@ class Component extends React.Component{
         }
         {
           this.props.newConfig &&
-          <option className="text-default" value={"new"}>Create New Config File...</option>
+          <option className="text-default" value={"new"}>创建新的配置文件...</option>
         }
       </Input>
     );

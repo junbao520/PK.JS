@@ -18,7 +18,7 @@ class CustomBanListManager extends React.Component{
         <CardHeader className="bg-white border-0">
           <Row className="align-items-center">
             <Col xs="8">
-              <h3 className="mb-0">Custom Ban List</h3>
+              <h3 className="mb-0">自定义封禁名单</h3>
             </Col>
           </Row>
         </CardHeader>

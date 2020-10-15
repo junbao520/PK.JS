@@ -68,10 +68,10 @@ class WipeName extends React.Component{
                   (
                     <>
                       <i className="fas fa-circle-notch fa-spin" />{" "}
-                      Loading...
+                      加载中...
                     </>
                   ) : (
-                    <>Wipe Player Name</>
+                    <>清除角色名字</>
                   )
               }
             </Button>

@@ -34,7 +34,7 @@ class EditAdminPermissions extends React.Component{
             <Card>
               <CardBody>
                 <div className="text-center mt-2 mb-3">
-                  User is not an admin!
+                  该用户不是一名管理员!
                 </div>
                 <div className="btn-wrapper text-center">
                   <i className="fas fa-exclamation-triangle fa-4x" />

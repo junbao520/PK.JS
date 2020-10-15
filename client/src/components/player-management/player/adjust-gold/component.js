@@ -61,7 +61,7 @@ class Component extends React.Component{
               size="sm"
               onClick={modal.open}
             >
-              Adjust Gold
+              调整第纳尔
             </Button>
 
             <Modal
@@ -85,7 +85,7 @@ class Component extends React.Component{
                             onChange={() => this.setState({ type: 'add' })}
                           />
                           <label className="custom-control-label" htmlFor="add">
-                            Add
+                            增加
                           </label>
                         </Col>
                         <Col className="custom-control custom-control-alternative custom-radio">
@@ -97,7 +97,7 @@ class Component extends React.Component{
                             onChange={() => this.setState({ type: 'remove' })}
                           />
                           <label className="custom-control-label" htmlFor="remove">
-                            Remove
+                            扣除
                           </label>
                         </Col>
                         <Col className="custom-control custom-control-alternative custom-radio">
@@ -109,7 +109,7 @@ class Component extends React.Component{
                             onChange={() => this.setState({ type: 'transfer' })}
                           />
                           <label className="custom-control-label" htmlFor="transfer">
-                            Transfer
+                            转让
                           </label>
                         </Col>
                       </Row>
@@ -118,7 +118,7 @@ class Component extends React.Component{
                           <label
                             className="form-control-label"
                           >
-                            Amount
+                            数量
                           </label>
                           <Input
                             className="form-control-alternative"
@@ -144,7 +144,7 @@ class Component extends React.Component{
                                   onChange={event => this.setState({ pouch: !event.target.checked })}
                                 />
                                 <label className="custom-control-label" htmlFor="bank">
-                                  Bank
+                                  银行存款
                                 </label>
                               </Col>
                               <Col className="custom-control custom-control-alternative custom-radio">
@@ -156,7 +156,7 @@ class Component extends React.Component{
                                   onChange={event => this.setState({ pouch: event.target.checked })}
                                 />
                                 <label className="custom-control-label" htmlFor="pouch">
-                                  Pouch
+                                  携带现金
                                 </label>
                               </Col>
                             </>
@@ -168,7 +168,7 @@ class Component extends React.Component{
                               <label
                                 className="form-control-label"
                               >
-                                Recipient
+                                接收者
                               </label>
                               <PlayerSelector
                                 serverID={this.props.serverID}
@@ -184,7 +184,7 @@ class Component extends React.Component{
                           <label
                             className="form-control-label"
                           >
-                            Reason
+                            原因
                           </label>
                           <FormGroup>
                             <Input
@@ -195,7 +195,7 @@ class Component extends React.Component{
                               invalid={this.state.reason === ''}
                             />
                             <FormFeedback>
-                              A reason cannot be blank.
+                              原因不能为空.
                             </FormFeedback>
                           </FormGroup>
                         </Col>
@@ -204,7 +204,7 @@ class Component extends React.Component{
                         className={classNames('mt-2', { disabled: !this.isValid() })}
                         color="primary"
                       >
-                        Adjust Gold
+                        调整第纳尔
                       </Button>
                     </Form>
                   </CardBody>

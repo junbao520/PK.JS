@@ -33,7 +33,7 @@ class PlayerSelector extends React.Component {
         loadOptions={this.searchUpdate}
         defaultOptions={defaultOptions}
         value={(this.props.ipMask) ? { value: this.props.ipMask, label: 'ID: #' + this.props.ipMask } : null}
-        placeholder="Select an IP..."
+        placeholder="选择一个IP..."
         onChange={option => this.props.onChange(option.value)}
       />
     );

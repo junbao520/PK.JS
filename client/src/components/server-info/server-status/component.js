@@ -16,10 +16,10 @@ class Component extends React.Component{
           <Row>
             <Col>
               <CardTitle className="text-uppercase text-muted mb-0">
-                Unknown Server
+                未知的服务器
               </CardTitle>
               <span className="h2 font-weight-bold mb-0">
-                Offline
+                服务器离线中
               </span>
             </Col>
             <Col className="col-auto">

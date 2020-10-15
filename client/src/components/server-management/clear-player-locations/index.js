@@ -22,7 +22,7 @@ class ClearPlayerLocations extends React.Component{
               color="warning"
             >
               <i className="fas fa-circle-notch fa-spin" />{" "}
-              Loading...
+              加载中...
             </Button>
           );
 

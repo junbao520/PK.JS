@@ -43,7 +43,7 @@ class ConfigManager extends React.Component{
         <CardHeader className="bg-white border-0">
           <Row className="align-items-center">
             <Col xs="8">
-              <h3 className="mb-0">Config File Management</h3>
+              <h3 className="mb-0">配置文件管理</h3>
             </Col>
           </Row>
         </CardHeader>
@@ -69,7 +69,7 @@ class ConfigManager extends React.Component{
                   <label
                     className="form-control-label"
                   >
-                    Config Name
+                    配置名
                   </label>
                   <FormGroup>
                     <Input
@@ -80,8 +80,8 @@ class ConfigManager extends React.Component{
                       invalid={!validatorServerConfigName(this.state.newConfigName)}
                     />
                     <FormFeedback>
-                      A config name cannot be blank and must only contain the characters A-Z, a-z, 0-9 or _.
-                      It must end with <code>.txt</code>.
+                      配置文件不能为空，只能包含字符 A-Z, a-z, 0-9 或 _.
+                      它必须以 <code>.txt</code> 作为结尾.
                     </FormFeedback>
                   </FormGroup>
                 </Col>
@@ -92,7 +92,7 @@ class ConfigManager extends React.Component{
                     color="primary"
                     disabled={!validatorServerConfigName(this.state.newConfigName)}
                   >
-                    Create
+                    创建
                   </Button>
                 </Col>
               </Row>
@@ -105,7 +105,7 @@ class ConfigManager extends React.Component{
             <>
               <hr className="my-4" />
               <h6 className="heading-small text-muted mb-4">
-                Config File
+                配置文件
               </h6>
               <ConfigEditor
                 serverID={this.props.serverID}

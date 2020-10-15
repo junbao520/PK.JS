@@ -35,7 +35,7 @@ export default function(props) {
           <ModalBody>
             <div className="py-3 text-center">
               <i className="fas fa-exclamation-triangle fa-4x" />
-              <h4 className="heading mt-4">Error!</h4>
+              <h4 className="heading mt-4">错误!</h4>
               {
                 props.errors.map((error, key) => (
                   <p key={key}>{ error.message || error }</p>
@@ -51,7 +51,7 @@ export default function(props) {
               type="button"
               onClick={modal.close}
             >
-              Close
+              关闭
             </Button>
           </ModalFooter>
         </Modal>

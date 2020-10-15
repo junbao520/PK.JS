@@ -38,7 +38,7 @@ class Component extends React.Component{
           size="md"
           className="mt-4"
         >
-          Add Admin
+          添加管理员
         </Button>
       </Form>
     );

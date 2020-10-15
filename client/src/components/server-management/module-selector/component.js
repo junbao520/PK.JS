@@ -21,7 +21,7 @@ class Component extends React.Component{
         onChange={this.onChange}
         disabled={this.props.disabled}
       >
-        <option className="text-default" value={null}>Select a Module...</option>
+        <option className="text-default" value={null}>选择一个MOD...</option>
         {
           this.props.modules.map((module, key) => (
             <option

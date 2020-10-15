@@ -20,7 +20,7 @@ class FullComponent extends React.Component {
         <CardHeader className="border-0">
           <Row className="align-items-center">
             <Col className="col">
-              <h3 className="mb-0">Player Info</h3>
+              <h3 className="mb-0">角色信息</h3>
             </Col>
             <Col className="col text-right">
               <StripPlayer
@@ -38,24 +38,24 @@ class FullComponent extends React.Component {
           <thead className="thead-light">
           <tr>
             <th>GUID</th>
-            <th>Online</th>
-            <th>Last Seen</th>
-            <th>Last Player Name</th>
+            <th>在线状态</th>
+            <th>上次在线</th>
+            <th>上次使用的角色名</th>
           </tr>
           </thead>
           <tbody>
           <tr>
             <th>{player.guid}</th>
-            <td>{(player.online > 0) ? 'Online' : 'Offline'}</td>
-            <td>{moment.utc(player.lastSeen).format('DD/MM/YYYY HH:mm')}</td>
+            <td>{(player.online > 0) ? '在线' : '离线'}</td>
+            <td>{moment.utc(player.lastSeen).format('YYYY/MM/DD HH:mm')}</td>
             <td>{player.lastPlayerName}</td>
           </tr>
           </tbody>
           <thead className="thead-light">
           <tr>
-            <th>Pouch</th>
-            <th>Bank</th>
-            <th>Bank Limit</th>
+            <th>携带现金</th>
+            <th>银行存款</th>
+            <th>银行上限</th>
             <th>{null}</th>
           </tr>
           </thead>

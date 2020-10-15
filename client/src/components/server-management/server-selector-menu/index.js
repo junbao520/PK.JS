@@ -16,8 +16,8 @@ class ServerSelectorSelect extends React.Component{
         onError={() => {}}
       >
         {({ loading, error, data }) => {
-          if (loading) return <p>Loading...</p>;
-          if (error) return <p>Error :(</p>;
+          if (loading) return <p>加载中...</p>;
+          if (error) return <p>错误 :(</p>;
 
           return (
             <Component

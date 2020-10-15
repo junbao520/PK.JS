@@ -1,93 +1,93 @@
 export default [
   {
     type: 'start_server',
-    name: 'Start Server',
-    toString: () => `Started the server.`
+    name: '开启服务器',
+    toString: () => `开启了服务器.`
   },
   {
     type: 'stop_server',
-    name: 'Stop Server',
-    toString: () => `Stopped the server.`
+    name: '停止服务器',
+    toString: () => `停止了服务器.`
   },
   {
     type: 'restart_server',
-    name: 'Restart Server',
-    toString: () => `Restarted the server.`
+    name: '重启服务器',
+    toString: () => `重启了服务器.`
   },
   {
     type: 'add_admin_permission',
-    name: 'Add Admin',
-    toString: adminLog => `Added ${adminLog.targetAdmin.displayName} as an admin.`
+    name: '添加管理员',
+    toString: adminLog => `添加了 ${adminLog.targetAdmin.displayName} 作为管理员.`
   },
   {
     type: 'update_admin_permission',
-    name: 'Edit Admin Permissions',
-    toString: adminLog => `Edited ${adminLog.targetAdmin.displayName}'s admin permissions.`
+    name: '编辑管理员权限',
+    toString: adminLog => `编辑了 ${adminLog.targetAdmin.displayName} 的管理员权限.`
   },
   {
     type: 'remove_admin_permission',
-    name: 'Remove Admin',
-    toString: adminLog => `Removed ${adminLog.targetAdmin.displayName} from being an admin.`
+    name: '移除管理员',
+    toString: adminLog => `移除了 ${adminLog.targetAdmin.displayName} 的管理员身份.`
   },
   {
     type: 'add_ban',
-    name: 'Add Ban',
-    toString: adminLog => `${adminLog.ipBanned ? 'IP' : ''} Banned ${adminLog.targetPlayer.guid} ${adminLog.length === -1 ? 'permanently' : `for ${adminLog.length} ${adminLog.length > 1 ? 'days' : 'day'}`} with reason: ${adminLog.reason}`
+    name: '封禁',
+    toString: adminLog => `${adminLog.ipBanned ? 'IP' : ''} 封禁了 ${adminLog.targetPlayer.guid} ${adminLog.length === -1 ? '永久' : `for ${adminLog.length} ${adminLog.length > 1 ? '天' : '天'}`} 原因是: ${adminLog.reason}`
   },
   {
     type: 'un_ban',
-    name: 'Unban',
-    toString: adminLog => `Unbanned ${adminLog.targetPlayer.guid} with reason: ${adminLog.reason}`
+    name: '解封',
+    toString: adminLog => `解封了 ${adminLog.targetPlayer.guid} 原因是: ${adminLog.reason}`
   },
   {
     type: 'delete_ban',
-    name: 'Delete Ban',
-    toString: adminLog => `Deleted ban from ${adminLog.targetPlayer.guid}'s history with reason: ${adminLog.reason}`
+    name: '删除封禁记录',
+    toString: adminLog => `删除了 ${adminLog.targetPlayer.guid} 的封禁记录 原因是: ${adminLog.reason}`
   },
   {
     type: 'add_warning',
-    name: 'Add Warning',
-    toString: adminLog => `Warned ${adminLog.targetPlayer.guid} with reason: ${adminLog.reason}`
+    name: '警告',
+    toString: adminLog => `警告了 ${adminLog.targetPlayer.guid} 原因是: ${adminLog.reason}`
   },
   {
     type: 'delete_warning',
-    name: 'Delete Warning',
-    toString: adminLog => `Deleted warning from ${adminLog.targetPlayer.guid}'s history with reason: ${adminLog.reason}`
+    name: '删除警告',
+    toString: adminLog => `删除了 ${adminLog.targetPlayer.guid} 的警告记录 原因是: ${adminLog.reason}`
   },
   {
     type: 'add_note',
-    name: 'Add Note',
-    toString: adminLog => `Added note to ${adminLog.targetPlayer.guid} with contents: ${adminLog.reason}`
+    name: '添加备注',
+    toString: adminLog => `向 ${adminLog.targetPlayer.guid} 添加了一条备注 内容是: ${adminLog.reason}`
   },
   {
     type: 'delete_note',
-    name: 'Delete Note',
-    toString: adminLog => `Deleted note from ${adminLog.targetPlayer.guid} with reason: ${adminLog.reason}`
+    name: '删除备注',
+    toString: adminLog => `删除了 ${adminLog.targetPlayer.guid} 的备注 原因是: ${adminLog.reason}`
   },
   {
     type: 'adjust_gold',
-    name: 'Adjust Gold',
+    name: '调整第纳尔',
     toString: adminLog => {
       switch (adminLog.adjustmentType) {
         case 'add':
-          return `Added ${adminLog.amount} gold ${adminLog.remove ? 'from' : 'to'} ${adminLog.targetPlayer.guid}'s ${adminLog.from === 'bankGold' ? 'bank' : 'pouch'} with reason: ${adminLog.reason}`;
+          return `添加 ${adminLog.amount} 第纳尔 ${adminLog.remove ? '从' : '到'} ${adminLog.targetPlayer.guid} 的 ${adminLog.from === 'bankGold' ? '银行存款' : '携带现金'} 原因是: ${adminLog.reason}`;
         case 'remove':
-          return `Removed ${adminLog.amount} gold ${adminLog.remove ? 'from' : 'to'} ${adminLog.targetPlayer.guid}'s ${adminLog.from === 'bankGold' ? 'bank' : 'pouch'} with reason: ${adminLog.reason}`;
+          return `扣除 ${adminLog.amount} 第纳尔 ${adminLog.remove ? '从' : '到'} ${adminLog.targetPlayer.guid} 的 ${adminLog.from === 'bankGold' ? '银行存款' : '携带现金'} 原因是: ${adminLog.reason}`;
         case 'transfer':
-          return `Transferred ${adminLog.amount} gold from ${adminLog.targetPlayer.guid} to ${adminLog.recipientPlayer.guid} with reason: ${adminLog.reason}`;
+          return `将 ${adminLog.amount} 第纳尔 从 ${adminLog.targetPlayer.guid} 转给 ${adminLog.recipientPlayer.guid} 原因是: ${adminLog.reason}`;
         default:
-          return 'Something went wrong here.';
+          return '出了些问题';
       }
     }
   },
   {
     type: 'strip_player',
-    name: 'Strip Player',
-    toString: adminLog => `Stripped Player ${adminLog.targetPlayer.guid} with reason: ${adminLog.reason}`
+    name: '扒光玩家',
+    toString: adminLog => `扒光了 ${adminLog.targetPlayer.guid} 原因是: ${adminLog.reason}`
   },
   {
     type: 'wipe_player_name',
-    name: 'Wipe Player Name',
-    toString: adminLog => `Wiped Player Name: ${adminLog.name}`
+    name: '清除角色名',
+    toString: adminLog => `清除角色名: ${adminLog.name}`
   }
 ];

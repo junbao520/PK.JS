@@ -10,17 +10,17 @@ export default function() {
   return (
     <Card>
       <CardHeader>
-        <h3 className="mb-0">Player Info</h3>
+        <h3 className="mb-0">角色信息</h3>
       </CardHeader>
       <CardBody>
         <div className="text-center mt-2 mb-2">
-          No Permission!
+          没有权限!
         </div>
         <div className="btn-wrapper text-center">
           <i className="fas fa-lock fa-4x"/>
         </div>
         <div className="text-center mt-2 mb-2">
-          You do not have permission to view this information.
+          您无权查看此角色信息.
         </div>
       </CardBody>
     </Card>

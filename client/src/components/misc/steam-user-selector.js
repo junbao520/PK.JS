@@ -32,7 +32,7 @@ class SteamUserSelector extends React.Component {
     if(this.props.allowNone){
       options.push({
         value: '',
-        label: 'None'
+        label: '无'
       });
     }
 
@@ -45,7 +45,7 @@ class SteamUserSelector extends React.Component {
     if(this.props.allowNone){
       defaultOptions.push({
         value: '',
-        label: 'None'
+        label: '无'
       });
     }
 
@@ -56,7 +56,7 @@ class SteamUserSelector extends React.Component {
         loadOptions={this.searchUpdate}
         defaultOptions={defaultOptions}
         value={(this.props.steamID) ? { value: this.props.steamID, label: this.props.steamID } : null}
-        placeholder="Select a Steam user..."
+        placeholder="选择一个Steam用户..."
         onChange={option => this.props.onChange(option.value)}
         isDisabled={this.props.isDisabled}
       />

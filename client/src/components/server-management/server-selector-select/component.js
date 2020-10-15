@@ -22,7 +22,7 @@ class Component extends React.Component {
         onChange={this.onChange}
         value={this.props.match.params.serverID || 'Select a Server...'}
       >
-        <option className="text-default" value={'Select a Server...'}>Select a Server...</option>
+        <option className="text-default" value={'Select a Server...'}>选择一个服务器...</option>
         {
           this.props.adminPermissions.map((adminPermission, key) => (
             <option

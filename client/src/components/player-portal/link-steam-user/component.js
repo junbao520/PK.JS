@@ -32,7 +32,7 @@ class Component extends React.Component{
         <label
           className="form-control-label"
         >
-          Link a new player...
+          绑定新角色...
         </label>
         <Input
           type="text"
@@ -54,7 +54,7 @@ class Component extends React.Component{
           color="primary"
           size="sm"
         >
-          Link Player
+          绑定角色
         </Button>
       </Form>
     );

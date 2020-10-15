@@ -15,16 +15,16 @@ class Component extends React.Component {
         <CardHeader className="bg-white border-0">
           <Row className="align-items-center">
             <Col xs="8">
-              <h3 className="mb-0">Richest Players</h3>
+              <h3 className="mb-0">财富排行榜</h3>
             </Col>
           </Row>
         </CardHeader>
         <Table className="align-items-center table-flush" responsive>
           <thead className="thead-light">
           <tr>
-            <th scope="col">Position</th>
-            <th scope="col">Name</th>
-            <th scope="col">Gold in Bank</th>
+            <th scope="col">名次</th>
+            <th scope="col">角色名</th>
+            <th scope="col">银行存款</th>
           </tr>
           </thead>
           <tbody>

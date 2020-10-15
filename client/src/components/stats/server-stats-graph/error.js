@@ -13,7 +13,7 @@ export default function(props) {
         <Row className="align-items-center">
           <Col>
             <h6 className="text-uppercase text-light ls-1 mb-1">
-              Server Stats
+              服务器统计
             </h6>
             <h2 className="text-white mb-0">{props.statName}</h2>
           </Col>
@@ -21,13 +21,13 @@ export default function(props) {
       </CardHeader>
       <CardBody>
         <div className="text-center mt-2 mb-2">
-          Error!
+          错误!
         </div>
         <div className="btn-wrapper text-center">
           <i className="fas fa-exclamation-triangle fa-4x"/>
         </div>
         <div className="text-center mt-2 mb-2">
-          Something went wrong. Sad times.
+          出了点问题，呜呜呜...
         </div>
       </CardBody>
     </Card>

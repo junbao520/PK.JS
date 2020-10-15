@@ -59,12 +59,12 @@ class StopServer extends React.Component{
                   (
                     <>
                       <i className="fas fa-circle-notch fa-spin" />{" "}
-                      Loading...
+                      加载中...
                     </>
                   ) : (
                     <>
                       <i className="fas fa-stop" />{" "}
-                      Stop Server
+                      关闭服务器
                     </>
                   )
               }

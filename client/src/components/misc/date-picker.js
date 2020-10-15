@@ -20,7 +20,7 @@ export default function(props) {
   return (
     <DatePicker
       customInput={<CustomInput />}
-      dateFormat="dd/MM/yyyy"
+      dateFormat="yyyy/MM/dd"
       {...props}
     />
   );

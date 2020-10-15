@@ -18,7 +18,7 @@ class Component extends React.Component {
         <CardHeader className="border-0">
           <Row className="align-items-center">
             <Col className="col">
-              <h3 className="mb-0">Ban List ({this.props.active ? 'Active' : 'All'} Bans)</h3>
+              <h3 className="mb-0">封禁列表 ({this.props.active ? '正在封禁' : '所有封禁记录'} Bans)</h3>
             </Col>
           </Row>
         </CardHeader>
@@ -26,12 +26,12 @@ class Component extends React.Component {
           <thead className="thead-light">
           <tr>
             <th scope="col">GUID</th>
-            <th scope="col">Reason</th>
-            <th scope="col">Public Reason</th>
-            <th scope="col">Start Date</th>
-            <th scope="col">End Date</th>
-            <th scope="col">IP Ban?</th>
-            <th scope="col">Admin</th>
+            <th scope="col">原因</th>
+            <th scope="col">公开原因</th>
+            <th scope="col">开始日期</th>
+            <th scope="col">结束日期</th>
+            <th scope="col">IP封禁?</th>
+            <th scope="col">管理员</th>
           </tr>
           </thead>
           <tbody>
@@ -41,14 +41,14 @@ class Component extends React.Component {
                 <th scope="row">{ban.player.guid}</th>
                 <td>{ban.privateReason}</td>
                 <td>{ban.publicReason}</td>
-                <td>{moment.utc(ban.startDate).format('DD/MM/YYYY HH:mm')}</td>
+                <td>{moment.utc(ban.startDate).format('YYYY/MM/DD HH:mm')}</td>
                 <td>
-                  {(ban.endDate ===  null) ? 'Perm Ban' : moment.utc(ban.endDate).format('DD/MM/YYYY HH:mm')}
+                  {(ban.endDate ===  null) ? '永久封禁' : moment.utc(ban.endDate).format('YYYY/MM/DD HH:mm')}
                   <br />
-                  {(ban.unbannedDate !==  null) ? `(Unbanned at: ${moment.utc(ban.unbannedDate).format('DD/MM/YYYY HH:mm')})` : ''}
+                  {(ban.unbannedDate !==  null) ? `(已解封于: ${moment.utc(ban.unbannedDate).format('YYYY/MM/DD HH:mm')})` : ''}
                 </td>
                 <td>
-                  {(ban.ipBan) ? 'Yes' : 'No'}
+                  {(ban.ipBan) ? '是' : '否'}
                 </td>
                 <td>
                   <SteamUser steamUser={ban.admin} />

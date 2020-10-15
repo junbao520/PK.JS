@@ -23,7 +23,7 @@ class Component extends React.Component {
         <CardHeader className="bg-white border-0">
           <Row className="align-items-center">
             <Col xs="8">
-              <h3 className="mb-0">Online Players</h3>
+              <h3 className="mb-0">在线玩家</h3>
             </Col>
           </Row>
         </CardHeader>
@@ -32,7 +32,7 @@ class Component extends React.Component {
             this.props.onlinePlayers.length === 0 && (
               <>
                 <div className="text-center mt-2 mb-2">
-                  No Players Online!
+                  没有玩家在线，真操蛋!
                 </div>
                 <div className="btn-wrapper text-center">
                   <i className="far fa-frown-open fa-4x"/>
@@ -78,7 +78,7 @@ class Component extends React.Component {
                       >
                         <div className="modal-header">
                           <h6 className="modal-title">
-                            Player Info
+                            角色信息
                           </h6>
                           <button
                             aria-label="Close"
@@ -105,7 +105,7 @@ class Component extends React.Component {
                             tag={Link}
                             to={`/admin/${this.props.serverID}/players/${player.guid}/`}
                           >
-                            View Player Page
+                            查看角色信息
                           </Button>
                           <Button
                             className="text-white ml-auto"
@@ -113,7 +113,7 @@ class Component extends React.Component {
                             data-dismiss="modal"
                             onClick={modal.close}
                           >
-                            Close
+                            关闭
                           </Button>
                         </ModalFooter>
                       </Modal>

@@ -24,7 +24,7 @@ class Component extends React.Component {
         <CardHeader className="bg-white border-0">
           <Row className="align-items-center">
             <Col xs="8">
-              <h3 className="mb-0">Player IPs</h3>
+              <h3 className="mb-0">玩家IP</h3>
             </Col>
           </Row>
         </CardHeader>
@@ -56,7 +56,7 @@ class Component extends React.Component {
                     >
                       <div className="modal-header">
                         <h6 className="modal-title">
-                          Player IP Info
+                          玩家IP信息
                         </h6>
                         <button
                           aria-label="Close"
@@ -74,7 +74,7 @@ class Component extends React.Component {
                           <h4 className="heading mt-4">
                             {record.player.guid}
                           </h4>
-                          <p><strong>Last Seen on IP:</strong> {moment.utc(record.lastSeen).format('DD/MM/YYYY HH:mm')}</p>
+                          <p><strong>IP上次出现:</strong> {moment.utc(record.lastSeen).format('YYYY/MM/DD HH:mm')}</p>
                         </div>
                       </ModalBody>
                       <ModalFooter>
@@ -84,7 +84,7 @@ class Component extends React.Component {
                           tag={Link}
                           to={`/admin/${this.props.serverID}/players/${record.player.guid}/`}
                         >
-                          View Player Page
+                          查看玩家页面
                         </Button>
                         <Button
                           className="text-white ml-auto"
@@ -92,7 +92,7 @@ class Component extends React.Component {
                           data-dismiss="modal"
                           onClick={modal.close}
                         >
-                          Close
+                          关闭
                         </Button>
                       </ModalFooter>
                     </Modal>

@@ -64,10 +64,10 @@ class RemoveAdmin extends React.Component{
                   (
                     <>
                       <i className="fas fa-circle-notch fa-spin" />{" "}
-                      Loading...
+                      加载中...
                     </>
                   ) : (
-                    <>Remove Admin</>
+                    <>删除管理员</>
                   )
               }
             </Button>

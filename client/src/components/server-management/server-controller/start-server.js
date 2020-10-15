@@ -62,12 +62,12 @@ class StartServer extends React.Component{
                   (
                     <>
                       <i className="fas fa-circle-notch fa-spin" />{" "}
-                      Loading...
+                      加载中...
                     </>
                   ) : (
                     <>
                       <i className="fas fa-play" />{" "}
-                      Start Server
+                      启动服务器
                     </>
                   )
               }

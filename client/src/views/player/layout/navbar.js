@@ -111,7 +111,7 @@ class CustomNavbar extends React.Component {
                     Auth.logout();
                   }}>
                     <i className="ni ni-user-run" />
-                    <span>Logout</span>
+                    <span>登出</span>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>

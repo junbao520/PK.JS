@@ -19,10 +19,10 @@ class AdminLogsFilter extends React.Component{
         <Col>
           <Card className="bg-secondary shadow">
             <CardHeader className="bg-white border-0">
-              <h3 className="mb-0">Admin Log Search</h3>
+              <h3 className="mb-0">管理员日志查询</h3>
             </CardHeader>
             <CardBody>
-              <h6 className="heading-small text-muted mb-2">Select Admin</h6>
+              <h6 className="heading-small text-muted mb-2">选择管理员</h6>
               <Row className="pl-lg-4">
                 <Col>
                   <SelectAdmin
@@ -32,7 +32,7 @@ class AdminLogsFilter extends React.Component{
                   />
                 </Col>
               </Row>
-              <h6 className="heading-small text-muted my-2">Filter Log Types</h6>
+              <h6 className="heading-small text-muted my-2">筛选日志类型</h6>
               <Row className="pl-lg-4">
                 {
                   logTypes.map((logType, key) => (

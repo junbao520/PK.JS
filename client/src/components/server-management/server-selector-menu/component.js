@@ -13,15 +13,15 @@ class Component extends React.Component {
     return (
       <Card>
         <CardHeader className="border-0">
-          <h3 className="mb-0">Servers</h3>
+          <h3 className="mb-0">服务器</h3>
         </CardHeader>
         <Table className="align-items-center table-flush" responsive>
           <thead className="thead-light">
           <tr>
-            <th>Server Name</th>
-            <th>Map</th>
-            <th>Player Count</th>
-            <th>Go to Server</th>
+            <th>服务器名</th>
+            <th>地图</th>
+            <th>玩家人数</th>
+            <th>转到服务器</th>
           </tr>
           </thead>
           <tbody>
@@ -44,7 +44,7 @@ class Component extends React.Component {
                   {
                     !adminPermission.server.serverStatus &&
                     (
-                      <>Server Offline</>
+                      <>服务器离线</>
                     )
                   }
                 </td>
@@ -55,7 +55,7 @@ class Component extends React.Component {
                     tag={Link}
                     to={`/admin/${adminPermission.server.id}/`}
                   >
-                    Go to Server...
+                    转到服务器...
                   </Button>
                 </td>
               </tr>

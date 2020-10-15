@@ -18,15 +18,15 @@ class Component extends React.Component{
     return (
       <Card>
         <CardHeader className="border-0">
-          <h3 className="mb-0">Linked Players</h3>
+          <h3 className="mb-0">绑定的角色</h3>
         </CardHeader>
         <Table className="align-items-center table-flush" responsive>
           <thead className="thead-light">
           <tr>
             <th>GUID</th>
-            <th>Server Name</th>
-            <th>Player Count</th>
-            <th>Go To Server</th>
+            <th>服务器名</th>
+            <th>玩家人数</th>
+            <th>转到服务器</th>
           </tr>
           </thead>
           <tbody>
@@ -49,7 +49,7 @@ class Component extends React.Component{
                   {
                     !player.server.serverStatus &&
                     (
-                      <>Server Offline</>
+                      <>服务器离线</>
                     )
                   }
                 </td>
@@ -60,7 +60,7 @@ class Component extends React.Component{
                     tag={Link}
                     to={`/player/${player.server.id}/${player.guid}/`}
                   >
-                    Go to Server...
+                    转到服务器...
                   </Button>
                 </td>
               </tr>

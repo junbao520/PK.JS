@@ -29,7 +29,7 @@ class Login extends React.Component {
           <Card className="bg-secondary shadow border-0">
             <CardHeader className="bg-transparent pb-5">
               <div className="text-center mt-2 mb-3">
-                Loading...
+                加载中...
               </div>
               <div className="btn-wrapper text-center">
                 <i className="fas fa-circle-notch fa-spin fa-4x" />
@@ -48,7 +48,7 @@ class Login extends React.Component {
           <Card className="bg-secondary shadow border-0">
             <CardHeader className="bg-transparent pb-5">
               <div className="text-muted text-center mt-2 mb-3">
-                <small>Sign in with</small>
+                <small>用Steam登录</small>
               </div>
               <div className="btn-wrapper text-center">
                 <Button
@@ -85,7 +85,7 @@ class Login extends React.Component {
           <Card className="bg-secondary shadow border-0">
             <CardHeader className="bg-transparent pb-5">
               <div className="text-muted text-center mt-2 mb-3">
-                <small>Remember Me?</small>
+                <small>记住账号?</small>
               </div>
               <div className="btn-wrapper text-center">
                 <Button
@@ -94,7 +94,7 @@ class Login extends React.Component {
                   onClick={() => {this.saveToken(false)}}
                 >
                   <i className="fas fa-times" />
-                  <span className="btn-inner--text">No thanks!</span>
+                  <span className="btn-inner--text">不了谢谢!</span>
                 </Button>
                 <Button
                   className="btn-neutral btn-icon"
@@ -102,7 +102,7 @@ class Login extends React.Component {
                   onClick={() => {this.saveToken(true)}}
                 >
                   <i className="fas fa-check" />
-                  <span className="btn-inner--text">Yes please!</span>
+                  <span className="btn-inner--text">好耶!</span>
                 </Button>
               </div>
             </CardHeader>

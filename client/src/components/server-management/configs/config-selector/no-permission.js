@@ -10,7 +10,7 @@ export default function() {
       type="select"
       disabled
     >
-      <option className="text-default" value={null}>You do not have permission to view configs...</option>
+      <option className="text-default" value={null}>您无权查看此配置...</option>
     </Input>
   );
 }

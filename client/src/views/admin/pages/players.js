@@ -60,7 +60,7 @@ class Players extends React.Component {
                 <CardHeader className="bg-white border-0">
                   <Row className="align-items-center">
                     <Col xs="8">
-                      <h3 className="mb-0">Player Search</h3>
+                      <h3 className="mb-0">搜索玩家</h3>
                     </Col>
                   </Row>
                 </CardHeader>

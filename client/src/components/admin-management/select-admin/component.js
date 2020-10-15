@@ -20,7 +20,7 @@ class Component extends React.Component{
         onChange={this.onChange}
         value={this.props.selectedAdmin || 'Select an Admin...'}
       >
-        <option className="text-default" value={'Select an Admin...'}>Select an Admin...</option>
+        <option className="text-default" value={'Select an Admin...'}>选择一位管理员...</option>
         {
           this.props.admins.map((admin, key) => (
             <option

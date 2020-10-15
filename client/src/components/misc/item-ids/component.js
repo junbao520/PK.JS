@@ -22,7 +22,7 @@ class Component extends React.Component{
         <CardHeader className="bg-white border-0">
           <Row className="align-items-center">
             <Col xs="8">
-              <h3 className="mb-0">Item IDs</h3>
+              <h3 className="mb-0">物品ID</h3>
             </Col>
           </Row>
         </CardHeader>
@@ -32,7 +32,7 @@ class Component extends React.Component{
               <label
                 className="form-control-label"
               >
-                Item Name
+                物品名
               </label>
               <Input
                 className="form-control-alternative"
@@ -46,8 +46,8 @@ class Component extends React.Component{
         <Table className="align-items-center table-flush" responsive>
           <thead className="thead-light">
           <tr>
-            <th>ID</th>
-            <th>Name</th>
+            <th>物品ID</th>
+            <th>物品名</th>
           </tr>
           </thead>
           <tbody>

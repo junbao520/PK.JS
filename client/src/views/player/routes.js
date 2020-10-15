@@ -9,14 +9,14 @@ const routes = [
   {
     path: pathPrefix + '/',
     exact: true,
-    name: "Home",
+    name: "主页",
     icon: "fas fa-home",
     component: Home
   },
   {
     path: pathPrefix + '/:serverID/:guid/',
     exact: true,
-    name: "Player",
+    name: "玩家",
     icon: "fas fa-user",
     component: Player,
     displayWhenPlayerSelected: true
@@ -24,7 +24,7 @@ const routes = [
   {
     path: pathPrefix + '/:serverID/:guid/server',
     exact: true,
-    name: "Server Info",
+    name: "服务器信息",
     icon: "fas fa-server",
     component: ServerInfo,
     displayWhenPlayerSelected: true
@@ -32,7 +32,7 @@ const routes = [
   {
     path: pathPrefix + '/:serverID/:guid/richest-players',
     exact: true,
-    name: "Richest Players",
+    name: "财富排行榜",
     icon: "fas fa-university",
     component: RichestPlayers,
     displayWhenPlayerSelected: true
