@@ -5,24 +5,27 @@ import {
   Card,
   CardHeader,
   Col,
-  Input
+  Input,
 } from 'reactstrap';
 
 import Auth from '../../../utils/auth';
 
 import Layout from '../layout/layout';
 
-class Login extends React.Component {
+class Register extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { dsiplayName: '', pwd: '' }
+    this.state = {
+      userName: '',
+      email: '',
+      qq: '',
+      pwd: '',
+      confirmPwd: '',
+    }
+    // this.login=()=>{
+    //   alert(this.state.userName);
+    // }
   }
-  showVal(name, e) {
-    this.setState({
-      [name]: e.target.value
-    });
-  }
-
   // async componentDidMount() {
   //   // check whether user is being redirect from login and process if the case
   //   // const urlParams = new URLSearchParams(window.location.search);
@@ -32,7 +35,11 @@ class Login extends React.Component {
   //   //   this.setState({});
   //   // }
   // }
-
+  showVal(name, e) {
+    this.setState({
+      [name]: e.target.value
+    });
+  }
   renderLoading() {
 
     return (
@@ -53,8 +60,8 @@ class Login extends React.Component {
     );
   }
 
-  renderLoginForm() {
-
+  renderRegisterForm() {
+  
 
     return (
       <Layout>
@@ -62,7 +69,7 @@ class Login extends React.Component {
           <Card className="bg-secondary shadow border-0">
             <CardHeader className="bg-transparent pb-5">
               <div className="text-muted text-center mt-2 mb-3">
-                <small>Sign in with</small>
+                <small>注册</small>
               </div>
               <div className="btn-wrapper text-center">
 
@@ -74,25 +81,46 @@ class Login extends React.Component {
                   onChange={this.showVal.bind(this, "displayName")}
                 />
                 <Input
-                  type="password"
+                  type="text"
+                  bsSize="sm"
+                  className="mb-2"
+                  placeholder="QQ"
+                  onChange={this.showVal.bind(this, "qq")}
+                />
+                <Input
+                  type="text"
+                  bsSize="sm"
+                  className="mb-2"
+                  placeholder="邮箱"
+                  onChange={this.showVal.bind(this, "email")}
+                />
+                <Input
+                   type="password"
                   bsSize="sm"
                   className="mb-2"
                   placeholder="密码"
                   onChange={this.showVal.bind(this, "pwd")}
                 />
+                <Input
+                  type="password"
+                  bsSize="sm"
+                  className="mb-2"
+                  placeholder="确认密码"
+                  onChange={this.showVal.bind(this, "confirmPwd")}
+                />
                 <Button
                   className="btn-neutral btn-icon"
                   color="default"
-                  onClick={() => { this.login() }}
+                  onClick={() => { this.registerForm() }}
                 >
 
-                  <span className="btn-inner--icon">
+                  {/* <span className="btn-inner--icon" >
                     <img
                       alt="..."
                       src={require("assets/img/icons/common/steam.svg")}
                     />
-                  </span>
-                  <span className="btn-inner--text">登录</span>
+                  </span> */}
+                  <span className="btn-inner--text">注册</span>
                 </Button>
               </div>
             </CardHeader>
@@ -107,79 +135,51 @@ class Login extends React.Component {
     if (Auth.saveToken) Auth.storeToken();
     this.setState({});
   }
-  async login() {
-    //获取了用户名和密码
-    // alert(this.state.userName);
-    let res = await Auth.attempLogin(this.state);
-    if (res == -1) {
-      alert("用户名或者密码错误");
-      return;
+  async registerForm() {
 
+    let msg = '';
+    if (this.state.dsplayName == '')
+      msg = "请填写用户名";
+    if (this.state.email == '' || this.state.email.indexOf("@") == -1)
+      msg = "请填写正确邮箱地址";
+    if (this.state.qq == '')
+      msg = "请填写QQ";
+    if (this.state.pwd == '' || this.state.confirmPwd == '')
+      msg = "请填写密码";
+    if (this.state.pwd != this.state.confirmPwd)
+      msg = "密码和确认密码不一致";
+    if (this.state.pwd.length < 6)
+      msg = "密码长度不能小于6位";
+    //校验不通过请
+    if (msg != '') {
+      alert(msg);
+      return;
     }
-    this.props.history.push('/');
-    this.saveToken(true);
+    delete this.state.confirmPwd;
+    let res = await Auth.register(this.state);
+    if (res.data == -1) {
+      alert("账户已经存在");
+    } else {
+      this.props.history.replace('/login');
+    }
+
+
+    //提交http 请求
+    //await Auth.attempLogin(this.state.userName, this.state.pwd);
+
     //await Auth.attemptAuth(window.location.search);
   }
-
-  renderRememberMe() {
-    return (
-      <Layout>
-        <Col lg="5" md="7">
-          <Card className="bg-secondary shadow border-0">
-            <CardHeader className="bg-transparent pb-5">
-              <div className="text-muted text-center mt-2 mb-3">
-                <small>Remember Me?</small>
-              </div>
-              <div className="btn-wrapper text-center">
-                <Button
-                  className="btn-neutral btn-icon"
-                  color="default"
-                  onClick={() => { this.saveToken(false) }}
-                >
-                  <i className="fas fa-times" />
-                  <span className="btn-inner--text">No thanks!</span>
-                </Button>
-                <Button
-                  className="btn-neutral btn-icon"
-                  color="default"
-                  onClick={() => { this.saveToken(true) }}
-                >
-                  <i className="fas fa-check" />
-                  <span className="btn-inner--text">Yes please!</span>
-                </Button>
-              </div>
-            </CardHeader>
-          </Card>
-        </Col>
-      </Layout>
-    );
-  }
-
   render() {
     // not logged in,
     // show loading while validating login attempt if callback present
     // or when JWT is stored in localStorage
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('openid.claimed_id') !== null ||
-      (localStorage.getItem('JWT') !== null && Auth.isLoggedIn === false)) {
-      return this.renderLoading();
-    }
+
 
     // not logged in, show login form
-    if (!Auth.isLoggedIn) {
-      return this.renderLoginForm();
-    }
 
-    // logged in, no remember me status, show remember me form
-    if (Auth.isLoggedIn && Auth.saveToken === null) {
-      return this.renderRememberMe();
-    }
+    return this.renderRegisterForm();
 
-    // logged in, select location to go to
-    if (Auth.isLoggedIn && Auth.saveToken !== null) {
-      return <Redirect to="/" />;
-    }
   }
 }
 
-export default Login;
+export default Register;

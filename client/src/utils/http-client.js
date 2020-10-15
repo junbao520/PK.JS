@@ -8,6 +8,9 @@ class HTTPClient {
   }
 
   get = uri => this.axios.get(uri, { headers: { Authorization: 'JWT ' + auth.jwtToken } });
+  post = (uri,data) => this.axios.post(uri,data, { headers: { Authorization: 'JWT ' + auth.jwtToken } });
+ // post=(uri,data)=>this.axios.post(uri,data, { headers: { Authorization: 'JWT ' + auth.jwtToken });
+
 }
 
 export default new HTTPClient();

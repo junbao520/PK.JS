@@ -1,5 +1,6 @@
 import Home from './pages/home';
 import Login from './pages/login';
+import Register from './pages/register'
 
 const routes = [
   {
@@ -15,6 +16,13 @@ const routes = [
     name: "登录",
     icon: "fas fa-key",
     component: Login
+  },
+  {
+    path: '/register',
+    exact: true,
+    name: "注册",
+    icon: "fas fa-key",
+    component: Register
   }
 ];
 

@@ -21,5 +21,17 @@ router.get(
     });
   }
 );
+router.post(
+  '/steam/return',
+  passport.authenticate('steam', {
+    session: false,
+    failureFlash: 'Failed to login.'
+  }),
+  ctx => {
+    ctx.body = JSON.stringify({
+      token: jwt.sign({ user: ctx.req.user }, serverConfig.jwtAuth.secret)
+    });
+  }
+);
 
 export default router;
