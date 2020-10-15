@@ -91,9 +91,9 @@ router.post('/user/login', async ctx => {
       let user = {
         steamID: "76561199098027095",
         displayName: "757114760",
-        avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg",
-        avatarMedium: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
-        avatarFull: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg",
+        avatar: "",
+        avatarMedium: "",
+        avatarFull: "",
         $setOnInsert: {
           panelAdmin: false
         }
