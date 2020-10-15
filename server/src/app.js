@@ -70,86 +70,97 @@ var intformat = require('biguint-format');
 let MongoClient = require('mongodb').MongoClient;
 import jwt from 'jsonwebtoken';
 //登录
-router.post('/user/login',async ctx=>{
-  let postData = ctx.request.body;
-  let res = await new Promise(function (resolve, reject) {
-    MongoClient.connect(serverConfig.mongoDB, function (err, db) {
-      const dbo = db.db("pk-js")
-      const collection = dbo.collection("steamusers")
-      collection.findOne({ displayName: postData.displayName,pwd:postData.pwd,aduit:1 }, function (err, res) {
-        if (err) reject(err);
-        else resolve(res)
-      });
-    });
-  });
-
-  if(res==null){
-    ctx.body=-1;
-  }
-  else{
-    let user={
-      steamID: "76561199098027095",
-      displayName: "757114760",
-      avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg",
-      avatarMedium: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
-      avatarFull: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg",
-      $setOnInsert: {
-        panelAdmin: false
-      }
-    }
-    user.steamID=res.steamID;
-    user.displayName=res.displayName;
-    user.avatar=res.avatar;
-    user.avatarMedium=res.avatarMedium;
-    user.$setOnInsert.panelAdmin=res.panelAdmin;
-    
-
-    ctx.body = JSON.stringify({
-      token: jwt.sign({ user: user }, serverConfig.jwtAuth.secret)
-    });
-  }
-})
-
-
-router.post('/register', async ctx => {
-  //console.log(ctx.query);
-  let postData = ctx.request.body;
-  var steamID = intformat(flakeIdGen.next(), 'dec');
-  postData.steamID = steamID;
-  //postData.id=id;
-  postData.__v=0;
-  postData.aduit = 0;
-  postData.avatar = 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg';
-  postData.avatarFull = postData.avatar;
-  postData.avatarMedium = postData.avatar;
-  postData.panelAdmin = false;
-  //先判断下用户名是否存在
-  let res = await new Promise(function (resolve, reject) {
-    MongoClient.connect(serverConfig.mongoDB, function (err, db) {
-      const dbo = db.db("pk-js")
-      const collection = dbo.collection("steamusers")
-      collection.findOne({ displayName: postData.displayName }, function (err, res) {
-        if (err) reject(err);
-        else resolve(res)
-      });
-    });
-  });
-  if (res!= null) {
-    ctx.body = -1;
-  }
-  else {
-    await new Promise(function (resolve, reject) {
+router.post('/user/login', async ctx => {
+  try {
+    let postData = ctx.request.body;
+    let res = await new Promise(function (resolve, reject) {
       MongoClient.connect(serverConfig.mongoDB, function (err, db) {
         const dbo = db.db("pk-js")
         const collection = dbo.collection("steamusers")
-        collection.insert(postData, function (err, res) {
+        collection.findOne({ displayName: postData.displayName, pwd: postData.pwd, aduit: 1 }, function (err, res) {
           if (err) reject(err);
           else resolve(res)
         });
       });
     });
-    ctx.body = 1;
+
+    if (res == null) {
+      ctx.body = -1;
+    }
+    else {
+      let user = {
+        steamID: "76561199098027095",
+        displayName: "757114760",
+        avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg",
+        avatarMedium: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+        avatarFull: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg",
+        $setOnInsert: {
+          panelAdmin: false
+        }
+      }
+      user.steamID = res.steamID;
+      user.displayName = res.displayName;
+      user.avatar = res.avatar;
+      user.avatarMedium = res.avatarMedium;
+      user.$setOnInsert.panelAdmin = res.panelAdmin;
+
+
+      ctx.body = JSON.stringify({
+        token: jwt.sign({ user: user }, serverConfig.jwtAuth.secret)
+      });
+    }
+  } catch (error) {
+    ctx.body = error.message;
   }
+
+})
+
+
+router.post('/register', async ctx => {
+
+  try {
+    let postData = ctx.request.body;
+    var steamID = intformat(flakeIdGen.next(), 'dec');
+    postData.steamID = steamID;
+    //postData.id=id;
+    postData.__v = 0;
+    postData.aduit = 0;
+    postData.avatar = 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg';
+    postData.avatarFull = postData.avatar;
+    postData.avatarMedium = postData.avatar;
+    postData.panelAdmin = false;
+    //先判断下用户名是否存在
+    let res = await new Promise(function (resolve, reject) {
+      MongoClient.connect(serverConfig.mongoDB, function (err, db) {
+        const dbo = db.db("pk-js")
+        const collection = dbo.collection("steamusers")
+        collection.findOne({ displayName: postData.displayName }, function (err, res) {
+          if (err) reject(err);
+          else resolve(res)
+        });
+      });
+    });
+    if (res != null) {
+      ctx.body = -1;
+    }
+    else {
+      await new Promise(function (resolve, reject) {
+        MongoClient.connect(serverConfig.mongoDB, function (err, db) {
+          const dbo = db.db("pk-js")
+          const collection = dbo.collection("steamusers")
+          collection.insert(postData, function (err, res) {
+            if (err) reject(err);
+            else resolve(res)
+          });
+        });
+      });
+      ctx.body = 1;
+    }
+
+  } catch (error) {
+    ctx.body = error.message;
+  }
+  //console.log(ctx.query);
 
 })
 if (inProduction) {
