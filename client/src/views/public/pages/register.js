@@ -16,7 +16,7 @@ class Register extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      userName: '',
+      displayName: '',
       email: '',
       qq: '',
       pwd: '',
@@ -162,12 +162,6 @@ class Register extends React.Component {
     } else {
       this.props.history.replace('/login');
     }
-
-
-    //提交http 请求
-    //await Auth.attempLogin(this.state.userName, this.state.pwd);
-
-    //await Auth.attemptAuth(window.location.search);
   }
   render() {
     // not logged in,
