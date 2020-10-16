@@ -86,12 +86,12 @@ class Login extends React.Component {
                   onClick={() => { this.login() }}
                 >
 
-                  <span className="btn-inner--icon">
+                  {/* <span className="btn-inner--icon">
                     <img
                       alt="..."
                       src={require("assets/img/icons/common/steam.svg")}
                     />
-                  </span>
+                  </span> */}
                   <span className="btn-inner--text">登录</span>
                 </Button>
               </div>

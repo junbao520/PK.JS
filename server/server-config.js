@@ -4,6 +4,8 @@ const baseConfig = {
 
   //mongoDB: 'mongodb://localhost:27017/pk-js',
   mongoDB: 'mongodb://xxhh:fDA2*BkBw8ZwQrfUPKJ8@localhost:9430/pk-js',
+  //头像地址
+  avatar:'http://xtest.persistentworld.cn/static/media/mrtx.83e148ed.jpg',
 
   steamAPIKey: '',
 

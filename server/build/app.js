@@ -143,8 +143,8 @@ router.post('/register', async ctx => {
     postData.steamID = steamID; //postData.id=id;
 
     postData.__v = 0;
-    postData.aduit = 0;
-    postData.avatar = 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg';
+    postData.aduit = 1;
+    postData.avatar = _serverConfig.default.avatar;
     postData.avatarFull = postData.avatar;
     postData.avatarMedium = postData.avatar;
     postData.panelAdmin = false; //先判断下用户名是否存在
