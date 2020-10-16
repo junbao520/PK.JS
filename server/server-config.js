@@ -2,8 +2,8 @@ const baseConfig = {
   host: 'http://localhost',
   port: 80 /* Must be port 80 due to M&B only connecting on it */,
 
-  mongoDB: 'mongodb://localhost:27017/pk-js',
-  //mongoDB: 'mongodb://xxhh:fDA2*BkBw8ZwQrfUPKJ8@localhost:9430/pk-js',
+  //mongoDB: 'mongodb://localhost:27017/pk-js',
+  mongoDB: 'mongodb://xxhh:fDA2*BkBw8ZwQrfUPKJ8@localhost:9430/pk-js',
 
   steamAPIKey: '',
 
