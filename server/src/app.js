@@ -29,6 +29,7 @@ mongoose.connect(serverConfig.mongoDB, {
 
 const app = new Koa();
 const router = new Router();
+const dbName = 'PKJS';
 
 if (!serverConfig.disableCronJobs) jobContainer.initContainer();
 app.jobContainer = jobContainer;
@@ -75,7 +76,7 @@ router.post('/user/login', async ctx => {
     let postData = ctx.request.body;
     let res = await new Promise(function (resolve, reject) {
       MongoClient.connect(serverConfig.mongoDB, function (err, db) {
-        const dbo = db.db("pk-js")
+        const dbo = db.db(dbName)
         const collection = dbo.collection("steamusers")
         collection.findOne({ displayName: postData.displayName, pwd: postData.pwd, aduit: 1 }, function (err, res) {
           if (err) reject(err);
@@ -113,7 +114,99 @@ router.post('/user/login', async ctx => {
 
 })
 
+//获取chest 信息 没有就生成
+router.get('/getChestInfo', async ctx => {
+  //let instanceid = ctx.query.instanceid;
+  let instanceid = parseInt(ctx.query.instanceid);
 
+  try {
+    let res = await new Promise(function (resolve, reject) {
+      let MongoClient = require('mongodb').MongoClient;
+      MongoClient.connect(serverConfig.mongoDB, function (err, db) {
+        const dbo = db.db(dbName)
+        const collection = dbo.collection("chest")
+        collection.findOne({ instanceid: instanceid }, function (err, res) {
+          if (err) reject(err);
+          else resolve(res)
+        });
+      });
+    });
+    if (res == null) {
+
+      let chest = '';
+      for (let i = 0; i < 48; i++) {
+        chest += '0|'
+      }
+      chest = chest.substr(0, chest.length - 1);
+
+      let instanceid = intformat(flakeIdGen.next(), 'dec');
+      //数字太大了
+      instanceid=parseInt( instanceid.toString().substr(0,10));
+      res = await new Promise(function (resolve, reject) {
+        let MongoClient = require('mongodb').MongoClient;
+        MongoClient.connect(serverConfig.mongoDB, function (err, db) {
+          const dbo = db.db(dbName)
+          const collection = dbo.collection("chest")
+          collection.insertOne({ instanceid: instanceid, chest: chest }, function (err, res) {
+            if (err) reject(err);
+            else resolve(res)
+          });
+        });
+      });
+      ctx.body = { instanceid: instanceid, chest: chest };
+    }
+    else {
+      //key_guids mongodb里面最好统一存储格式
+      ctx.body = res;
+    }
+  } catch (error) {
+    //ctx.body = `83|-1|${playerid}`
+    ctx.body = error.message;
+  }
+
+});
+
+
+
+router.get('/updateChestInfo', async ctx => {
+  //id太大了
+  try {
+    let instanceid =parseInt(ctx.query.instanceid);
+    let chest = ctx.query.chest;
+    console.log(instanceid);
+    let res = await new Promise(function (resolve, reject) {
+      let MongoClient = require('mongodb').MongoClient;
+      MongoClient.connect(serverConfig.mongoDB, function (err, db) {
+        const dbo = db.db(dbName)
+        const collection = dbo.collection("chest")
+        collection.findOne({ instanceid: instanceid }, function (err, res) {
+          if (err) reject(err);
+          else resolve(res)
+        });
+      });
+    });
+    if (res == null) {
+      ctx.body = -1;
+    }
+    else {
+      console.log("ok")
+      let MongoClient = require('mongodb').MongoClient;
+      MongoClient.connect(serverConfig.mongoDB, function (err, db) {
+        const dbo = db.db(dbName)
+        const collection = dbo.collection("chest")
+        collection.updateOne(
+          { instanceid: instanceid },
+          { $set: { 'chest': chest } },
+          { upsert: true }
+        );
+      });
+    }
+    ctx.body = 1;
+  } catch (error) {
+    //ctx.body = `83|-1|${playerid}`
+    ctx.body = error.message;
+  }
+})
 router.post('/register', async ctx => {
 
   try {
@@ -130,7 +223,7 @@ router.post('/register', async ctx => {
     //先判断下用户名是否存在
     let res = await new Promise(function (resolve, reject) {
       MongoClient.connect(serverConfig.mongoDB, function (err, db) {
-        const dbo = db.db("pk-js")
+        const dbo = db.db(dbName)
         const collection = dbo.collection("steamusers")
         collection.findOne({ displayName: postData.displayName }, function (err, res) {
           if (err) reject(err);
@@ -144,7 +237,7 @@ router.post('/register', async ctx => {
     else {
       await new Promise(function (resolve, reject) {
         MongoClient.connect(serverConfig.mongoDB, function (err, db) {
-          const dbo = db.db("pk-js")
+          const dbo = db.db(dbName)
           const collection = dbo.collection("steamusers")
           collection.insert(postData, function (err, res) {
             if (err) reject(err);
@@ -170,8 +263,6 @@ if (inProduction) {
     ctx.body = fs.readFileSync(path.join(clientPath, '/build/favicon.png'));
   });
 
-
-
   //bob 2020.10.11
   router.get('/getHouseInfo', async ctx => {
     //ctx.body = ctx.query;
@@ -184,7 +275,7 @@ if (inProduction) {
       let res = await new Promise(function (resolve, reject) {
         let MongoClient = require('mongodb').MongoClient;
         MongoClient.connect(serverConfig.mongoDB, function (err, db) {
-          const dbo = db.db("pk-js")
+          const dbo = db.db(dbName)
           const collection = dbo.collection("house_system")
           collection.findOne({ house_id: house_id }, function (err, res) {
             if (err) reject(err);
